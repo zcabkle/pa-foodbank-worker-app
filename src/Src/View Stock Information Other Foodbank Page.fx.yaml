@@ -1,0 +1,552 @@
+"'View Stock Information Other Foodbank Page' As screen":
+
+    "'Banner (View Stock Information Other Foodbank)' As rectangle":
+        Fill: =varNeitherColor
+        Height: =90
+        Width: =640
+        Y: =29
+        ZIndex: =1
+
+    "'Appbar (View Stock Information Other Foodbank)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =2
+
+    "'Topbar (View Stock Information Other Foodbank)' As 'Topbar Cmpnt'":
+        ZIndex: =3
+
+    "'Banner2 (View Stock Information Other Foodbank)' As rectangle":
+        Fill: |-
+            =If(
+                (('Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.Selected.StockLevel = StockLevel.Overstocked) && ('Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.Selected.ShareStockLevelWith = ShareWith.Foodbanks || 'Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.Selected.ShareStockLevelWith = ShareWith.'Foodbanks & Public')),
+                varSoftOverstockedColor,
+                (('Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.Selected.StockLevel = StockLevel.Understocked) && ('Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.Selected.ShareStockLevelWith = ShareWith.Foodbanks || 'Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.Selected.ShareStockLevelWith = ShareWith.'Foodbanks & Public')),
+                varSoftUnderstockedColor,
+                varNeitherColor
+            )
+        Height: =60
+        Width: =640
+        Y: =120
+        ZIndex: =5
+
+    "'Viewing stock at foodbank X (View Stock Information Other Foodbank)' As label":
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =59
+        Size: =21
+        Text: ="Viewing stock at " & 'Other_Foodbanks_Gallery (Other Foodbanks)'.Selected.Name
+        Width: =640
+        Y: =60
+        ZIndex: =6
+
+    "'Item Name (View Stock Information Other Foodbank)' As label":
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =21
+        Text: ='Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.Selected.Name
+        Width: =469
+        X: =85
+        Y: =130
+        ZIndex: =7
+
+    FormViewer2 As formViewer:
+        DataSource: =Stock
+        Height: =851
+        Item: ='Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.Selected
+        Width: =640
+        Y: =182
+        ZIndex: =8
+
+        Image_DataCard12 As typedDataCard.largeImageViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_image"
+            Default: =ThisItem.Image
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_image")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =263
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardValue89 As image:
+                DisplayMode: =Parent.DisplayMode
+                Height: =251
+                Image: =Parent.Default
+                Width: =366
+                X: =165
+                Y: =6
+                ZIndex: =2
+
+        ShareStockLevelWith_DataCard1 As typedDataCard.comboBoxOptionSetSingleViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_sharestocklevelwith"
+            Default: =ThisItem.ShareStockLevelWith
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_sharestocklevelwith")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue90.Selected
+            Width: =640
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            DataCardKey69 As label:
+                AutoHeight: =true
+                Height: =43
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =245
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            DataCardValue90 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices(ShareWith)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =18
+                Width: =(Parent.Width - 60) * 0.6
+                X: =292
+                ZIndex: =2
+
+            ErrorMessage53 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue90.Y + DataCardValue90.Height
+                ZIndex: =3
+
+            StarVisible53 As label:
+                Align: =Align.Center
+                Height: =DataCardKey69.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey69.Y
+                ZIndex: =4
+
+        Name_DataCard12 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_name"
+            Default: =ThisItem.Name
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =47
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =9
+
+            DataCardKey12 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =37
+                Y: =3
+                ZIndex: =1
+
+            DataCardValue59 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =288
+                Y: =10
+                ZIndex: =2
+
+        Description_DataCard9 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_description"
+            Default: =ThisItem.Description
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_description")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =137
+            Required: =false
+            Visible: =true
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =9
+
+            DataCardKey13 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =38
+                ZIndex: =1
+
+            DataCardValue63 As label:
+                DisplayMode: =Parent.DisplayMode
+                Height: =137
+                Italic: =If(IsBlank(Parent.Default), true, false)
+                Overflow: =Overflow.Scroll
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =If(IsBlank(Parent.Default), "No description given", Parent.Default)
+                Width: =(Parent.Width - 60) * 0.6
+                X: =282
+                ZIndex: =2
+
+        Quantity_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_quantity"
+            Default: =ThisItem.Quantity
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_quantity")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Visible: =(ThisItem.ShareQuantityWith = ShareWith.Foodbanks || ThisItem.ShareQuantityWith = ShareWith.'Foodbanks & Public')
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =9
+
+            DataCardKey22 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =35
+                Y: =6
+                ZIndex: =1
+
+            DataCardValue65 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =290
+                Y: =6
+                ZIndex: =2
+
+        ItemCategory_DataCard2 As typedDataCard.comboBoxOptionSetSingleViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_itemcategory"
+            Default: =ThisItem.ItemCategory
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_itemcategory")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue85.Selected
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =9
+
+            DataCardKey24 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue85.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue85 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices(ItemCategory)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =18
+                Width: =(Parent.Width - 60) * 0.6
+                X: =290
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage47 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue85.Y + DataCardValue85.Height
+                ZIndex: =3
+
+            StarVisible47 As label:
+                Align: =Align.Center
+                Height: =DataCardKey24.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey24.Y
+                ZIndex: =4
+
+        StockLevel_DataCard2 As typedDataCard.comboBoxOptionSetSingleViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_stocklevel"
+            Default: =ThisItem.StockLevel
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_stocklevel")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue69.Selected
+            Visible: =(ThisItem.ShareStockLevelWith = ShareWith.Foodbanks || ThisItem.ShareStockLevelWith = ShareWith.'Foodbanks & Public')
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =9
+
+            DataCardKey23 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            DataCardValue69 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices(StockLevel)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =18
+                Width: =(Parent.Width - 60) * 0.6
+                X: =292
+                ZIndex: =2
+
+            ErrorMessage39 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue69.Y + DataCardValue69.Height
+                ZIndex: =3
+
+            StarVisible39 As label:
+                Align: =Align.Center
+                Height: =DataCardKey23.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey23.Y
+                ZIndex: =4
+
+        ShareItemWith_DataCard2 As typedDataCard.comboBoxOptionSetSingleViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_shareitemwith"
+            Default: =ThisItem.ShareItemWith
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_shareitemwith")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =78
+            Required: =true
+            Update: =DataCardValue86.Selected
+            Width: =640
+            X: =0
+            Y: =6
+            ZIndex: =9
+
+            DataCardKey46 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            DataCardValue86 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices(ShareWith)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =18
+                Width: =(Parent.Width - 60) * 0.6
+                X: =292
+                ZIndex: =2
+
+            ErrorMessage49 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue86.Y + DataCardValue86.Height
+                ZIndex: =3
+
+            StarVisible49 As label:
+                Align: =Align.Center
+                Height: =DataCardKey46.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey46.Y
+                ZIndex: =4
+
+        ShareQuantityWith_DataCard2 As typedDataCard.comboBoxOptionSetSingleViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_sharequantitywith"
+            Default: =ThisItem.ShareQuantityWith
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"cr967_sharequantitywith")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue87.Selected
+            Width: =640
+            X: =0
+            Y: =7
+            ZIndex: =9
+
+            DataCardKey47 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =1
+
+            DataCardValue87 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices(ShareWith)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =18
+                Width: =(Parent.Width - 60) * 0.6
+                X: =292
+                ZIndex: =2
+
+            ErrorMessage51 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue87.Y + DataCardValue87.Height
+                ZIndex: =3
+
+            StarVisible51 As label:
+                Align: =Align.Center
+                Height: =DataCardKey47.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey47.Y
+                ZIndex: =4
+

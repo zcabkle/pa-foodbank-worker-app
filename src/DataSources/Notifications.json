@@ -1,0 +1,123 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr967_notifications",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr967_notification",
+    "MaxGetRowsCount": 500,
+    "Name": "Notifications",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr967_datetime": "DateTime",
+      "cr967_FoodbankKey": "FromFoodbankKey",
+      "cr967_message": "Message",
+      "cr967_notification_AsyncOperations": "System Jobs",
+      "cr967_notification_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr967_notification_DuplicateBaseRecord": "Duplicate Records (cr967_notification_DuplicateBaseRecord)",
+      "cr967_notification_DuplicateMatchingRecord": "Duplicate Records (cr967_notification_DuplicateMatchingRecord)",
+      "cr967_notification_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr967_notification_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr967_notification_ProcessSession": "Process Sessions",
+      "cr967_notification_SyncErrors": "Sync Errors",
+      "cr967_notificationid": "Notification",
+      "cr967_notificationmessagetype": "NotificationMessageType",
+      "cr967_notificationpk": "NotificationPK",
+      "cr967_ToFoodbankKey": "ToFoodbankKey",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Notifications",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Notifications (Views)",
+    "Name": "_cr967_notification_views",
+    "RelatedEntityName": "Notifications",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "3325efcc-ec07-4184-8944-c763e3ed560f": "Notification Advanced Find View",
+      "60313d67-081f-4e68-bbd7-e5a632e358ab": "Notification Associated View",
+      "7141bbcf-1d9a-4816-87fc-fffde2dc396f": "Notification Lookup View",
+      "83d65c3a-1b74-ed11-81aa-000d3a4ae085": "Default View",
+      "980acd70-e129-4822-a659-04a0dab94916": "Active Notifications",
+      "a1d03efb-b72f-4f5e-8df8-9cff3179924f": "Inactive Notifications"
+    }
+  },
+  {
+    "DisplayName": "Status (Notifications)",
+    "Name": "cr967_notification_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Notifications"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Notifications",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Notifications)",
+    "Name": "cr967_notification_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Notifications"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Notifications",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "NotificationMessageType",
+    "Name": "cr967_notificationmessagetype",
+    "OptionSetInfoNameMapping": {
+      "0": "ItemUnderstocked",
+      "1": "ItemOverstocked"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr967_notificationmessagetype",
+        "OptionSetReferenceEntityName": "Notifications"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr967_notificationmessagetype",
+    "RelatedEntityName": "Notifications",
+    "Type": "OptionSetInfo"
+  }
+]

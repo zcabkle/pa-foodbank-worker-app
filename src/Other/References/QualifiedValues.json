@@ -1,0 +1,113 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Users (Forms)",
+      "Values": {
+        "Application User": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Information": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "User": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "User form – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "User Hierarchy Tile Form": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_foodbank_forms",
+      "Namespace": "Foodbanks (Forms)",
+      "Values": {
+        "Foodbank main form": "3025612b-1e74-ed11-81aa-000d3a4ae085",
+        "Information": "7813eb02-c3b5-4fc6-8964-662e0a151be5"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_item_forms",
+      "Namespace": "Stock (Forms)",
+      "Values": {
+        "Information": "855b2b2e-afce-4b5e-b3a7-e5def29f8e14",
+        "Stock main form": "6d7921ca-1f74-ed11-81aa-000d3a4ae085"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_parcel_forms",
+      "Namespace": "Parcels (Forms)",
+      "Values": {
+        "Information": "0fd0a72f-5b32-499f-b646-c9ccd41e5d6c",
+        "Parcel main form": "dfe79aa2-1f74-ed11-81aa-000d3a4ae085"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_incomingrecord_forms",
+      "Namespace": "IncomingRecords (Forms)",
+      "Values": {
+        "IncomingRecord main form": "cffcc3b8-1e74-ed11-81aa-000d3a4ae085",
+        "Information": "2d4c83fc-89ec-4ac7-9557-91f752fa7207"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_supplier_forms",
+      "Namespace": "Suppliers (Forms)",
+      "Values": {
+        "Information": "cb89e632-4f4f-4408-a1b7-e525bdfd36ae",
+        "Supplier main form": "5abd4aec-1f74-ed11-81aa-000d3a4ae085"
+      }
+    },
+    {
+      "Kind": "default.cds_team_forms",
+      "Namespace": "Teams (Forms)",
+      "Values": {
+        "Information": "f5cfab6a-d4c2-4519-b68f-6e7485432e29",
+        "Team": "7ba7fac1-1418-4335-935f-f7f8dfd73fcc",
+        "Team form – Business": "4aabf594-b30a-490d-bf97-89c67c6777fe"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_visitor_forms",
+      "Namespace": "Visitors (Forms)",
+      "Values": {
+        "Information": "322eef94-3ce3-4fe5-a398-e6c5146f1f7a",
+        "Visitor main form": "3e173e15-2074-ed11-81aa-000d3a4ae085"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_outgoingrecord_forms",
+      "Namespace": "OutgoingRecords (Forms)",
+      "Values": {
+        "Information": "012ffd0f-6e70-43c1-924a-df57426fd5ed",
+        "OutgoingRecord main form": "b97d666f-1f74-ed11-81aa-000d3a4ae085"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_visits_forms",
+      "Namespace": "Visits (Forms)",
+      "Values": {
+        "Default Dashboard": "d2999fc5-208d-ed11-81ac-000d3a4ae085",
+        "Information": "6b22b0d9-056d-4c9d-bd07-41276e25626e",
+        "Visits main form": "9f61004d-2074-ed11-81aa-000d3a4ae085"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_notification_forms",
+      "Namespace": "Notifications (Forms)",
+      "Values": {
+        "Information": "e3e26cf8-2975-4b3f-8741-bb3c5e674058",
+        "Notification main form": "60954427-1f74-ed11-81aa-000d3a4ae085"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_itemcategory_forms",
+      "Namespace": "ItemCategories (Forms)",
+      "Values": {
+        "Information": "1f80b10c-4379-4f45-b29c-ef8787f1af8f",
+        "ItemCategory main form": "77f7b1df-1e74-ed11-81aa-000d3a4ae085"
+      }
+    },
+    {
+      "Kind": "default.cds_cr967_foodbank_forms",
+      "Namespace": "Foodbanks_1 (Forms)",
+      "Values": {
+        "Foodbank main form": "3025612b-1e74-ed11-81aa-000d3a4ae085",
+        "Information": "7813eb02-c3b5-4fc6-8964-662e0a151be5"
+      }
+    }
+  ]
+}

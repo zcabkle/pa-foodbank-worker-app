@@ -1,0 +1,366 @@
+"'Basket Page' As screen":
+
+    "'Appbar (Basket)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =3
+
+    "'Topbar (Basket)' As 'Topbar Cmpnt'":
+        ZIndex: =4
+
+    "'Basket_Gallery (Basket)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =714
+        Items: =colBasket
+        Layout: =Layout.Vertical
+        TemplateFill: =
+        TemplatePadding: =10
+        TemplateSize: =196
+        Visible: =Not('Your basket is empty (Basket)'.Visible)
+        Y: =152
+        ZIndex: =5
+
+        HtmlText2_3 As htmlViewer:
+            Height: =195
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:604px;height:180px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =620
+            ZIndex: =1
+
+        Image1 As image:
+            BorderColor: =If(IsBlank(LookUp(Stock, ItemPK = ThisItem.ID).Image), RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 0))
+            BorderThickness: =1
+            Height: =128
+            Image: =If(IsBlank(LookUp(Stock, ItemPK = ThisItem.ID).Image), SampleImage, LookUp(Stock, ItemPK = ThisItem.ID).Image)
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =128
+            X: =39
+            Y: =33
+            ZIndex: =4
+
+        Title2 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =68
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Name
+            Width: =337
+            X: =194
+            Y: =18
+            ZIndex: =5
+
+        Icon12 As icon.Trash:
+            Icon: =Icon.Trash
+            OnSelect: =Remove(colBasket, ThisItem)
+            Width: =0
+            X: =558
+            ZIndex: =6
+
+        Label8 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =62
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: |-
+                ="Quantity:"
+            Width: =145
+            X: =232
+            Y: =86
+            ZIndex: =7
+
+        Dropdown3 As dropdown:
+            BorderThickness: =1.5
+            ChevronBackground: =RGBA(219, 219, 219, 1)
+            ChevronDisabledBackground: =RGBA(0, 0, 0, 0)
+            ChevronDisabledFill: =RGBA(0, 0, 0, 0)
+            ChevronFill: =RGBA(0, 18, 107, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(116, 116, 116, 1), -20%)
+            ChevronHoverFill: =RGBA(0, 18, 107, 1)
+            Default: =ThisItem.Quantity
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Height: =62
+            HoverColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(153, 207, 236, 1)
+            Items: =Sequence(50)
+            OnChange: |-
+                =Patch(colBasket, LookUp(colBasket, ID = ThisItem.ID), { Quantity: Dropdown3.Selected.Value });
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 18, 107, 1)
+            PressedColor: =RGBA(0, 18, 107, 1)
+            PressedFill: =RGBA(153, 207, 236, 1)
+            SelectionColor: =RGBA(0, 18, 107, 1)
+            SelectionFill: =varMenuSecondaryColor
+            Size: =21
+            Width: =116
+            X: =377
+            Y: =86
+            ZIndex: =8
+
+        Icon13 As icon.Trash:
+            Height: =51
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Remove(colBasket, ThisItem);
+                Notify("Item removed from basket.", NotificationType.Error);
+            Width: =51
+            X: =538
+            Y: =72
+            ZIndex: =9
+
+    "'Type_of_transaction_Radio (Basket)' As radio":
+        Default: ="Incoming Transaction"
+        Height: =82
+        Items: =["In", "Out"]
+        Layout: =Layout.Horizontal
+        RadioSize: =50
+        Size: =18
+        Width: =252
+        X: =232
+        Y: =866
+        ZIndex: =6
+
+    "'Type of transaction (Basket)' As label":
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Type:"
+        Width: =94
+        X: =155
+        Y: =866
+        ZIndex: =7
+
+    "'Your basket is empty (Basket)' As label":
+        Align: =Align.Center
+        Height: =191
+        Size: =20
+        Text: ="Your basket is empty. Add items to this basket to record transaction information."
+        Visible: =IsEmpty('Basket_Gallery (Basket)'.AllItems)
+        Width: =398
+        X: =117
+        Y: =412
+        ZIndex: =8
+
+    Icon2 As icon.Add:
+        Color: =RGBA(0, 134, 208, 1)
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Set(
+                tempCurrentQuantity,
+                0
+            );
+            Set(
+                newQuantity,
+                0
+            );
+            If(
+                Not(IsBlank(ComboBox1.Selected.ItemPK)),
+                Set(
+                    alreadyExists,
+                    CountRows(
+                        Filter(
+                            colBasket,
+                            ID = ComboBox1.Selected.ItemPK
+                        )
+                    ) = 1
+                );
+                If(
+                    Not(alreadyExists),
+                    Collect(
+                        colBasket,
+                        {
+                            ID: ComboBox1.Selected.ItemPK,
+                            Quantity: 1,
+                            Name: ComboBox1.Selected.Name
+                        }
+                    )
+                );
+                If(
+                    alreadyExists,
+                    Set(
+                        tempCurrentQuantity,
+                        LookUp(
+                            colBasket,
+                            ID = ComboBox1.Selected.ItemPK
+                        ).Quantity
+                    )
+                );
+                Set(
+                    newQuantity,
+                    tempCurrentQuantity + 1
+                );
+                Patch(
+                    colBasket,
+                    LookUp(
+                        colBasket,
+                        ID = ComboBox1.Selected.ItemPK
+                    ),
+                    {Quantity: newQuantity}
+                );
+                Notify(
+                    "Item added to basket",
+                    NotificationType.Success
+                );
+                ,
+                Notify(
+                    "Invalid item",
+                    NotificationType.Error
+                )
+            )
+        X: =548
+        Y: =78
+        ZIndex: =11
+
+    ComboBox1 As combobox:
+        ChevronBackground: =RGBA(219, 219, 219, 1)
+        ChevronFill: =RGBA(0, 18, 107, 1)
+        DisplayFields: =["cr967_name"]
+        Height: =70
+        InputTextPlaceholder: ="Find items to add to transaction"
+        Items: =Filter(Stock, FoodbankKey.FoodbankPK = SelectedFoodbank)
+        SearchFields: =["cr967_name"]
+        SearchItems: =Search(Filter(Stock, FoodbankKey.FoodbankPK = SelectedFoodbank),ComboBox1.SearchText,"cr967_name")
+        SelectionColor: =RGBA(0, 18, 107, 1)
+        SelectionFill: =RGBA(204, 231, 246, 1)
+        SelectMultiple: =false
+        Size: =21
+        Width: =506
+        X: =21
+        Y: =75
+        ZIndex: =12
+
+    Group11 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        HtmlText2_25 As htmlViewer:
+            Height: =89
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:233px;height:70px; border-radius: 40px; background-color:rgba(0, 18, 107, 1); box-shadow: 0px 0px 0px 0px rgba(0, 18, 107, 0.5), inset 0px 20px 28px 0px rgba(0, 18, 107, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =243
+            X: =330
+            Y: =943
+            ZIndex: =2
+
+        "'Continue_btn (Basket)' As button":
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            HoverFill: =RGBA(0, 18, 107, 1)
+            OnSelect: |-
+                =Collect(
+                    invalidTransaction,
+                    false
+                );
+                If(
+                    IsEmpty('Basket_Gallery (Basket)'.AllItems),
+                    Collect(
+                        invalidTransaction,
+                        true
+                    );
+                    
+                );
+                If(
+                    Not(IsEmpty('Basket_Gallery (Basket)'.AllItems)) && 'Type_of_transaction_Radio (Basket)'.Selected.Value = "Out",
+                    ForAll(
+                        colBasket As basketItem,
+                        If(
+                            Value(
+                                LookUp(
+                                    Stock,
+                                    ItemPK = basketItem.ID
+                                ).Quantity
+                            ) < Value(basketItem.Quantity),
+                            Collect(
+                                invalidTransaction,
+                                true
+                            )
+                        )
+                    )
+                );
+                If(
+                    Last(invalidTransaction).Value = true,
+                    Notify(
+                        "This transaction is invalid. You do not have enough items in stock to complete this transaction or your basket is completely empty.",
+                        NotificationType.Error
+                    ),
+                    'Type_of_transaction_Radio (Basket)'.Selected.Value = "In",
+                    Navigate('Submit Incoming Transaction Page'),
+                    'Type_of_transaction_Radio (Basket)'.Selected.Value = "Out",
+                    Navigate('Submit Outgoing Transaction Page')
+                )
+            PressedBorderColor: =RGBA(0, 18, 107, 1)
+            PressedColor: =RGBA(0, 18, 107, 1)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =24
+            Text: ="Continue"
+            Width: =233
+            X: =335
+            Y: =948
+            ZIndex: =9
+
+    Group12 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =13
+
+        HtmlText2_26 As htmlViewer:
+            Height: =89
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:233px;height:70px; border-radius: 40px; background-color:rgba(149, 149, 149, 1); box-shadow: 0px 0px 0px 0px rgba(149, 149, 149, 0.5), inset 0px 20px 28px 0px rgba(149, 149, 149, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =243
+            X: =67
+            Y: =943
+            ZIndex: =1
+
+        "'Cancel_btn (Basket)' As button":
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            HoverFill: =ColorFade(RGBA(116, 116, 116, 1), -20%)
+            OnSelect: =Back()
+            PressedBorderColor: =RGBA(219, 219, 219, 1)
+            PressedColor: =RGBA(219, 219, 219, 1)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =24
+            Text: ="Cancel"
+            Width: =233
+            X: =72
+            Y: =948
+            ZIndex: =10
+

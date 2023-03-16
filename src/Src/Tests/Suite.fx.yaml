@@ -1,0 +1,125 @@
+"'84b6614f-b0f1-41c0-9ec1-c55126ac893c' As TestSuite":
+    Description: ="x"
+    DisplayName: ="Suite"
+
+    "'47ad150a-b78c-4bce-bd67-6cafb65cf02b' As TestCase":
+        Description: ="x"
+        DisplayName: ="Case (1)"
+
+        Step1 As TestStep:
+            Description: ="Select 'Icon7_5' in row 1 in 'MyFoodbanks_Gallery (Select Foodbank)'"
+            Screen: =Select Foodbank Page
+            Value: =Select('MyFoodbanks_Gallery (Select Foodbank)', 1, Icon7_5)
+
+        Step2 As TestStep:
+            Description: ="Select 'Icon7' in row 1 in 'MyStock_Gallery (Home)'"
+            Screen: =Home Page
+            Value: =Select('MyStock_Gallery (Home)', 1, Icon7)
+
+    "'9bc972b5-80ce-4b8a-8c2f-30af19d5976b' As TestCase":
+        Description: =""
+        DisplayName: ="Case"
+
+        Step1 As TestStep:
+            Description: ="Select 'Icon7_5' in row 1 in 'MyFoodbanks_Gallery (Select Foodbank)'"
+            Screen: =Select Foodbank Page
+            Value: =Select('MyFoodbanks_Gallery (Select Foodbank)', 1, Icon7_5)
+
+        Step2 As TestStep:
+            Description: ="Select 'Add_Item_btn (Home)'"
+            Screen: =Home Page
+            Value: =Select('Add_Item_btn (Home)')
+
+        Step3 As TestStep:
+            Description: ="Set 'DataCardValue51'.Text to ""Item"""
+            Screen: =Add Item Page
+            Value: =SetProperty(DataCardValue51.Text, "Item")
+
+        Step4 As TestStep:
+            Description: ="Set 'DataCardValue5'.Text to ""X"""
+            Screen: =Add Item Page
+            Value: =SetProperty(DataCardValue5.Text, "X")
+
+        Step5 As TestStep:
+            Description: ="Set 'DataCardValue53'.Text to ""1"""
+            Screen: =Add Item Page
+            Value: =SetProperty(DataCardValue53.Text, "1")
+
+        Step6 As TestStep:
+            Description: |-
+                ="Set 'DataCardValue58'.SelectedItems to Table({'Value':{'Id':0,'Value':""Understocked""}})"
+            Screen: =Add Item Page
+            Value: |-
+                =SetProperty(DataCardValue58.SelectedItems, Table({Value:{Id:0,Value:"Understocked"}}))
+
+        Step7 As TestStep:
+            Description: ="Select 'DataCardValue58'"
+            Screen: =Add Item Page
+            Value: =Select(DataCardValue58)
+
+        Step8 As TestStep:
+            Description: |-
+                ="Set 'DataCardValue54'.SelectedItems to Table({'Value':{'Id':0,'Value':""Fresh/Fruit/Veg""}})"
+            Screen: =Add Item Page
+            Value: |-
+                =SetProperty(DataCardValue54.SelectedItems, Table({Value:{Id:0,Value:"Fresh/Fruit/Veg"}}))
+
+        Step9 As TestStep:
+            Description: ="Select 'DataCardValue54'"
+            Screen: =Add Item Page
+            Value: =Select(DataCardValue54)
+
+        Step10 As TestStep:
+            Description: |-
+                ="Set 'DataCardValue55'.SelectedItems to Table({'Value':{'Id':2,'Value':""Foodbanks & Public""}})"
+            Screen: =Add Item Page
+            Value: |-
+                =SetProperty(DataCardValue55.SelectedItems, Table({Value:{Id:2,Value:"Foodbanks & Public"}}))
+
+        Step11 As TestStep:
+            Description: ="Select 'DataCardValue55'"
+            Screen: =Add Item Page
+            Value: =Select(DataCardValue55)
+
+        Step12 As TestStep:
+            Description: |-
+                ="Set 'DataCardValue56'.SelectedItems to Table({'Value':{'Id':2,'Value':""Foodbanks & Public""}})"
+            Screen: =Add Item Page
+            Value: |-
+                =SetProperty(DataCardValue56.SelectedItems, Table({Value:{Id:2,Value:"Foodbanks & Public"}}))
+
+        Step13 As TestStep:
+            Description: ="Select 'DataCardValue56'"
+            Screen: =Add Item Page
+            Value: =Select(DataCardValue56)
+
+        Step14 As TestStep:
+            Description: |-
+                ="Set 'DataCardValue57'.SelectedItems to Table({'Value':{'Id':2,'Value':""Foodbanks & Public""}})"
+            Screen: =Add Item Page
+            Value: |-
+                =SetProperty(DataCardValue57.SelectedItems, Table({Value:{Id:2,Value:"Foodbanks & Public"}}))
+
+        Step15 As TestStep:
+            Description: ="Select 'DataCardValue57'"
+            Screen: =Add Item Page
+            Value: =Select(DataCardValue57)
+
+        Step17 As TestStep:
+            Description: ="Count Before"
+            Value: =Set(countBefore, CountRows(Stock))
+
+        Step16 As TestStep:
+            Description: ="Select 'Complete_Icon (Add Item)'"
+            Screen: =Add Item Page
+            Value: =Select('Complete_Icon (Add Item)')
+
+        Step18 As TestStep:
+            Description: ="Count After"
+            Value: =Set(countAfter, CountRows(Stock))
+
+        Step19 As TestStep:
+            Description: ="Assert"
+            Value: |-
+                =Assert(countAfter = countBefore + 1, "Kudos count incorrect. Expected : " & countBefore + 1  & " Actual :" & countAfter)
+

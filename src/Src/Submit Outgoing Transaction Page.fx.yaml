@@ -1,0 +1,203 @@
+"'Submit Outgoing Transaction Page' As screen":
+
+    "'Topbar (Submit Outgoing Transaction)' As 'Topbar Cmpnt'":
+        ZIndex: =2
+
+    "'Visitor_Gallery (Submit Outgoing Transaction)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =822
+        Items: =Visitors
+        Layout: =Layout.Vertical
+        TemplateFill: |+
+            =
+            
+        TemplatePadding: =10
+        TemplateSize: =236
+        Visible: =Not(Label23.Visible)
+        Y: =235
+        ZIndex: =3
+
+        HtmlText2_6 As htmlViewer:
+            Height: =238
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:0px; width:604px;height:220px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            OnSelect: =Select(Parent)
+            Width: =620
+            ZIndex: =1
+
+        HtmlText2_27 As htmlViewer:
+            Height: =63
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:212px;height:46px; border-radius: 40px; background-color:rgba(0, 18, 107, 1); box-shadow: 0px 0px 0px 0px rgba(0, 18, 107, 0.5), inset 0px 20px 28px 0px rgba(0, 18, 107, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =235
+            X: =362
+            Y: =145
+            ZIndex: =2
+
+        Label12_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Forename & " " & ThisItem.Surname
+            Width: =343
+            X: =19
+            ZIndex: =3
+
+        Label13_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Address
+            Width: =317
+            X: =19
+            Y: =51
+            ZIndex: =4
+
+        Label14_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Email
+            Width: =331
+            X: =19
+            Y: =98
+            ZIndex: =5
+
+        Button5_1 As button:
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =46
+            HoverFill: =RGBA(0, 18, 107, 1)
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Fill Visit Info Page');
+            PressedBorderColor: =RGBA(0, 18, 107, 1)
+            PressedColor: =RGBA(0, 18, 107, 1)
+            RadiusBottomLeft: =2010
+            RadiusBottomRight: =2010
+            RadiusTopLeft: =2010
+            RadiusTopRight: =2010
+            Text: ="Use This Visitor"
+            Width: =212
+            X: =367
+            Y: =151
+            ZIndex: =6
+
+        Label16_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            OnSelect: =
+            Size: =21
+            Text: =ThisItem.'Phone Number'
+            Width: =392
+            X: =19
+            Y: =168
+            ZIndex: =7
+
+    "'Filter_btn Cmpnt_6' As 'Filter_btn Cmpnt'":
+        X: =535
+        Y: =67
+        ZIndex: =5
+
+    "'Appbar (Submit Outgoing Transaction)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =6
+
+    Label23 As label:
+        Height: =66
+        Size: =21
+        Text: ="No results found."
+        Visible: |
+            =IsEmpty('Visitor_Gallery (Submit Outgoing Transaction)'.AllItems)
+        Width: =250
+        X: =195
+        Y: =570
+        ZIndex: =7
+
+    Group1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        HtmlText2_20 As htmlViewer:
+            Height: =89
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:604px;height:70px; border-radius: 40px; background-color:rgba(0, 134, 208, 1); box-shadow: 0px 0px 0px 0px rgba(0, 134, 208, 0.5), inset 0px 20px 28px 0px rgba(0, 134, 208, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =622
+            X: =8
+            Y: =152
+            ZIndex: =8
+
+        "'Add_Item_btn (Home)_1' As button":
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =Color.Transparent
+            Height: =70
+            HoverBorderColor: =Self.BorderColor
+            HoverFill: =ColorFade(RGBA(0, 134, 208, 1), -20%)
+            OnSelect: =Navigate('Add Visitor Page');
+            PressedBorderColor: =RGBA(0, 134, 208, 1)
+            PressedColor: =RGBA(0, 134, 208, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =24
+            Text: ="Add New Visitor"
+            Width: =604
+            X: =14
+            Y: =157
+            ZIndex: =9
+
+    Group13 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        HtmlText2_21 As htmlViewer:
+            Height: =85
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:514px;height:70px; border-radius: 40px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset 0px 0px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =529
+            X: =18
+            Y: =70
+            ZIndex: =1
+
+        "'Search (Submit Outgoing Transaction)' As text":
+            Color: =RGBA(116, 116, 116, 1)
+            Default: =""
+            Fill: =Color.Transparent
+            Height: =70
+            HintText: ="Search for a visitor"
+            HoverFill: =RGBA(215, 215, 215, 0.8)
+            PaddingLeft: =10
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =21
+            Width: =514
+            X: =21
+            Y: =75
+            ZIndex: =4
+

@@ -1,0 +1,411 @@
+"'View Foodbank Information Page' As screen":
+
+    "'Appbar (View Foodbank Information)' As 'Appbar Cmpnt'":
+        Y: =1036
+
+    "'Topbar (View Foodbank Information)' As 'Topbar Cmpnt'":
+        ZIndex: =2
+
+    "'Foodbank Information Form (View Foodbank Information)' As formViewer":
+        DataSource: =Foodbanks
+        Height: =889
+        Item: ='Other_Foodbanks_Gallery (Other Foodbanks)'.Selected
+        Width: =619
+        X: =6
+        Y: =78
+        ZIndex: =3
+
+        Image_DataCard9 As typedDataCard.largeImageViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_image"
+            Default: =ThisItem.Image
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_image")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Width: =619
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardValue24 As image:
+                DisplayMode: =Parent.DisplayMode
+                Height: =230
+                Image: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =129
+                Y: =6
+                ZIndex: =2
+
+        Manager_DataCard1 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_Manager"
+            Default: =ThisItem.Manager
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_Manager")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue79.Selected
+            Width: =619
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            DataCardKey79 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue79.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue79 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["fullname"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Foodbanks].Manager)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["fullname"]
+                SearchItems: =Search(Choices([@Foodbanks].Manager),DataCardValue79.SearchText,"fullname")
+                SelectMultiple: =false
+                Size: =18
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey79.X + DataCardKey79.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage55 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue79.Y + DataCardValue79.Height
+                ZIndex: =3
+
+            StarVisible55 As label:
+                Align: =Align.Center
+                Height: =DataCardKey79.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey79.Y
+                ZIndex: =4
+
+        Name_DataCard11 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_name"
+            Default: =ThisItem.Name
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =619
+            X: =0
+            Y: =1
+            ZIndex: =4
+
+            DataCardKey72 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue72.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue72 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =253
+                Y: =10
+                ZIndex: =2
+
+        OperatingHours_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_operatinghours"
+            Default: =ThisItem.OperatingHours
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_operatinghours")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =150
+            Required: =false
+            Width: =619
+            X: =0
+            Y: =2
+            ZIndex: =4
+
+            DataCardKey73 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =21
+                Y: =(OperatingHours_DataCard1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue73 As label:
+                DisplayMode: =Parent.DisplayMode
+                Height: =150
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                Wrap: =false
+                X: =255
+                ZIndex: =2
+
+        Email_DataCard1 As typedDataCard.emailViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_email"
+            Default: =ThisItem.Email
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_email")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =619
+            X: =0
+            Y: =3
+            ZIndex: =4
+
+            DataCardKey74 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue74.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue74 As htmlViewer:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =45
+                HtmlText: =Parent.Default
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Width: =391
+                X: =228
+                Y: =12
+                ZIndex: =2
+
+        PhoneNumber_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_phonenumber"
+            Default: =ThisItem.PhoneNumber
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_phonenumber")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =619
+            X: =0
+            Y: =4
+            ZIndex: =4
+
+            DataCardKey75 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue75.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue75 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey75.X + DataCardKey75.Width
+                Y: =10
+                ZIndex: =2
+
+        Address_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_address"
+            Default: =ThisItem.Address
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_address")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =619
+            X: =0
+            Y: =5
+            ZIndex: =4
+
+            DataCardKey76 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =(Address_DataCard1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue76 As label:
+                DisplayMode: =Parent.DisplayMode
+                Height: =74
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey76.X + DataCardKey76.Width
+                ZIndex: =2
+
+        PostCode_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_postcode"
+            Default: =ThisItem.PostCode
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_postcode")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =619
+            X: =0
+            Y: =6
+            ZIndex: =4
+
+            DataCardKey77 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue77.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue77 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey77.X + DataCardKey77.Width
+                Y: =10
+                ZIndex: =2
+
+        Town_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_town"
+            Default: =ThisItem.Town
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Foodbanks],DataSourceInfo.DisplayName,"cr967_town")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =619
+            X: =0
+            Y: =7
+            ZIndex: =4
+
+            DataCardKey78 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue78.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue78 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =253
+                Y: =13
+                ZIndex: =2
+
+    "'View_Parcels_btn (View Foodbank Information)' As button":
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =56
+        HoverBorderColor: =
+        HoverFill: =RGBA(0, 18, 107, 1)
+        OnSelect: =Navigate('Other Foodbank Parcels Page')
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =24
+        Text: ="View Parcels"
+        Width: =227
+        X: =76
+        Y: =965
+        ZIndex: =4
+
+    "'View_Stock_btn (View Foodbank Information)' As button":
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =56
+        HoverBorderColor: =
+        HoverFill: =RGBA(0, 18, 107, 1)
+        OnSelect: =Navigate('Other Foodbank Stock Page')
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =24
+        Text: ="View Stock"
+        Width: =227
+        X: =337
+        Y: =965
+        ZIndex: =5
+

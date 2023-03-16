@@ -1,0 +1,105 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr967_visitors",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr967_visitor",
+    "MaxGetRowsCount": 500,
+    "Name": "Visitors",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr967_address": "Address",
+      "cr967_email": "Email",
+      "cr967_forename": "Forename",
+      "cr967_phonenumber": "Phone Number",
+      "cr967_surname": "Surname",
+      "cr967_visitor_AsyncOperations": "System Jobs",
+      "cr967_visitor_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr967_visitor_DuplicateBaseRecord": "Duplicate Records (cr967_visitor_DuplicateBaseRecord)",
+      "cr967_visitor_DuplicateMatchingRecord": "Duplicate Records (cr967_visitor_DuplicateMatchingRecord)",
+      "cr967_visitor_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr967_visitor_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr967_visitor_ProcessSession": "Process Sessions",
+      "cr967_visitor_SyncErrors": "Sync Errors",
+      "cr967_Visitor_VisitorKey_cr967_OutgoingRe": "OutgoingRecords",
+      "cr967_Visitor_VisitorKey_cr967_Visits": "Visits",
+      "cr967_visitorid": "Visitor",
+      "cr967_visitorpk": "VisitorPK",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Visitors",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Visitors (Views)",
+    "Name": "_cr967_visitor_views",
+    "RelatedEntityName": "Visitors",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "19f09067-8666-45e4-9fc6-ed59d0b267b7": "Visitor Associated View",
+      "336a6b77-8b91-4134-87e4-3aad2a55f9fc": "Inactive Visitors",
+      "64f1db4c-1c74-ed11-81aa-000d3a4ae085": "Default View",
+      "72f06b57-eee9-4e3c-aaab-be30778a6720": "Active Visitors",
+      "98d626b5-ce27-4e82-8d2c-38d3f6d2c15a": "Visitor Advanced Find View",
+      "a88f7f2c-2486-4e03-b461-7c59ed60f844": "Visitor Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Visitors)",
+    "Name": "cr967_visitor_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Visitors"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Visitors",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Visitors)",
+    "Name": "cr967_visitor_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Visitors"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Visitors",
+    "Type": "OptionSetInfo"
+  }
+]

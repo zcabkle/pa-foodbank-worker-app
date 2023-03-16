@@ -1,0 +1,162 @@
+"'Other Foodbank Parcels Page' As screen":
+
+    "'Banner (Other Foodbank Parcels)' As rectangle":
+        Fill: =varNeitherColor
+        Height: =90
+        Width: =640
+        Y: =29
+        ZIndex: =2
+
+    "'Topbar (Other Foodbank Parcels)' As 'Topbar Cmpnt'":
+        ZIndex: =3
+
+    "'Other_Foodbank_Parcel_Gallery (Other Foodbank Parcels)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =827
+        Items: =Search(Filter(Parcels,And(FoodbankKey.FoodbankPK='Other_Foodbanks_Gallery (Other Foodbanks)'.Selected.FoodbankPK,Or(ShareParcelWith=ShareWith.Foodbanks,ShareParcelWith=ShareWith.'Foodbanks & Public'))),'Search (Other Foodbank Parcels)'.Text,"cr967_name")
+        Layout: =Layout.Vertical
+        TemplateFill: =
+        TemplatePadding: =10
+        TemplateSize: =213
+        Visible: =Not('Empty Parcels (Other Foodbank Parcels)'.Visible)
+        Y: =214
+        ZIndex: =4
+
+        HtmlText2_9 As htmlViewer:
+            Height: =217
+            HtmlText: |-
+                ="<div style='margin-left:0px; margin-top:0px; width:604px;height:200px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =620
+            ZIndex: =1
+
+        Image3_1 As image:
+            BorderColor: =If(IsBlank(ThisItem.Image), RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 0))
+            BorderThickness: =1.5
+            Height: =128
+            Image: =If(IsBlank(ThisItem.Image), SampleImage, ThisItem.Image)
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =14
+            Y: =32
+            ZIndex: =2
+
+        Subtitle4_1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.ParcelPK
+            VerticalAlign: =VerticalAlign.Top
+            Width: =
+            X: =
+            Y: =
+            ZIndex: =3
+
+        Label18_2 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =135
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Description
+            Visible: =
+            Width: =434
+            X: =157
+            Y: =51
+            ZIndex: =4
+
+        Label19_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =51
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Name
+            Width: =389
+            X: =157
+            ZIndex: =5
+
+        Icon7_4 As icon.NextArrow:
+            Height: =49
+            Icon: =Icon.NextArrow
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('View Parcel Information Other Foodbank Page');
+            Width: =49
+            X: =530
+            Y: =71
+            ZIndex: =6
+
+    "'Viewing parcels at foodbank X (Other Foodbank Parcels)' As label":
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        Size: =21
+        Text: ="Viewing parcels at " & 'Other_Foodbanks_Gallery (Other Foodbanks)'.Selected.Name
+        Width: =640
+        Y: =60
+        ZIndex: =5
+
+    "'Empty Parcels (Other Foodbank Parcels)' As label":
+        Align: =Align.Center
+        Height: =215
+        Size: =21
+        Text: ="No results."
+        Visible: =IsEmpty('Other_Foodbank_Parcel_Gallery (Other Foodbank Parcels)'.AllItems)
+        Width: =453
+        X: =93
+        Y: =520
+        ZIndex: =7
+
+    "'Filter_btn Cmpnt_5' As 'Filter_btn Cmpnt'":
+        X: =535
+        Y: =127
+        ZIndex: =8
+
+    "'Appbar (Other Foodbank Parcels)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =9
+
+    Group9 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        HtmlText2_23 As htmlViewer:
+            Height: =85
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:514px;height:70px; border-radius: 40px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset 0px 0px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =529
+            X: =16
+            Y: =130
+            ZIndex: =1
+
+        "'Search (Other Foodbank Parcels)' As text":
+            Color: =RGBA(116, 116, 116, 1)
+            Default: =""
+            Fill: =Color.Transparent
+            Height: =70
+            HintText: ="Search for a parcel"
+            HoverFill: =RGBA(215, 215, 215, 0.8)
+            PaddingLeft: =10
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =21
+            Width: =514
+            X: =21
+            Y: =135
+            ZIndex: =6
+

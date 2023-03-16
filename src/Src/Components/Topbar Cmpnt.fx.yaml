@@ -1,0 +1,124 @@
+"'Topbar Cmpnt' As CanvasComponent":
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =60
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Button8 As button:
+        BorderThickness: =0
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =60
+        HoverBorderColor: =
+        HoverFill: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =50
+        PaddingTop: =0
+        PressedBorderColor: =
+        PressedColor: =
+        PressedFill: =
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =24
+        Text: =""
+        Width: =640
+        ZIndex: =1
+
+    Button8_11 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =25
+        HoverBorderColor: =
+        HoverFill: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =50
+        PaddingTop: =0
+        PressedBorderColor: =
+        PressedColor: =
+        PressedFill: =
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: =""
+        Width: =640
+        ZIndex: =2
+
+    ArrowIcon As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =60
+        Icon: =Icon.ArrowLeft
+        Width: =70
+        X: =10
+        ZIndex: =4
+
+    Topbar_Arrow_btn As button:
+        AutoDisableOnSelect: =false
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =Color.Transparent
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =60
+        HoverBorderColor: =Color.Transparent
+        HoverFill: =Color.Transparent
+        OnSelect: =Back()
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =Color.Transparent
+        PressedColor: =Color.Transparent
+        PressedFill: =
+        Size: =24
+        Text: =""
+        Width: =70
+        ZIndex: =5
+
+    NotificationIcon As icon.Bell:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Bell
+        OnSelect: =Navigate('Notifications Page')
+        Width: =50
+        X: =576
+        Y: =5
+        ZIndex: =6
+
+    PersonIcon As icon.Person:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Person
+        OnSelect: =Navigate('Profile Page')
+        Width: =50
+        X: =518
+        Y: =5
+        ZIndex: =7
+
+    Label2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        Size: =19
+        Text: =LookUp(Foodbanks, FoodbankPK = SelectedFoodbank).Name
+        Width: =437
+        X: =92
+        ZIndex: =8
+
+    Circle1 As circle:
+        Fill: =RGBA(255, 0, 0, 1)
+        Height: =15
+        Visible: =Not(IsEmpty(Filter(Notifications, ToFoodbankKey.FoodbankPK = SelectedFoodbank)))
+        Width: =15
+        X: =606
+        Y: =10
+        ZIndex: =9
+

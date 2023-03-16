@@ -1,0 +1,185 @@
+"'Parcels Page' As screen":
+
+    "'Topbar (Parcels)' As 'Topbar Cmpnt'":
+        ZIndex: =3
+
+    "'Parcels_Gallery (Parcels)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =793
+        Items: |-
+            =Search(
+                Filter(
+                    Parcels,
+                    FoodbankKey.FoodbankPK = SelectedFoodbank
+                ),
+                'Search (Parcels)'.Text,
+                "cr967_name",
+                "cr967_description"
+            )
+        Layout: =Layout.Vertical
+        TemplateFill: |
+            =
+        TemplatePadding: =10
+        TemplateSize: =218
+        Visible: =Not('Empty Parcels (Parcels)'.Visible)
+        Y: =230
+        ZIndex: =5
+
+        HtmlText2_2 As htmlViewer:
+            Height: =218
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:604px;height:200px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =620
+            ZIndex: =1
+
+        Image4_1 As image:
+            BorderColor: =If(IsBlank(ThisItem.Image), RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 0))
+            BorderThickness: =1
+            Height: =128
+            Image: =If(IsBlank(ThisItem.Image), SampleImage, ThisItem.Image)
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Width: =128
+            X: =13
+            Y: =24
+            ZIndex: =2
+
+        Icon7_1 As icon.NextArrow:
+            Height: =49
+            Icon: =Icon.NextArrow
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('View Parcel Information Page')
+            Width: =49
+            X: =531
+            Y: =74
+            ZIndex: =3
+
+        Label1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =58
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Name
+            Width: =322
+            X: =163
+            Y: =6
+            ZIndex: =4
+
+        Label9 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =128
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |
+                =ThisItem.Description
+            Width: =382
+            X: =163
+            Y: =53
+            ZIndex: =5
+
+    "'Empty Parcels (Parcels)' As label":
+        Align: =Align.Center
+        Height: =200
+        Size: =21
+        Text: ="No results found."
+        Visible: =IsEmpty('Parcels_Gallery (Parcels)'.AllItems)
+        Width: =495
+        X: =72
+        Y: =552
+        ZIndex: =6
+
+    "'Filter_btn Cmpnt_2' As 'Filter_btn Cmpnt'":
+        X: =535
+        Y: =67
+        ZIndex: =7
+
+    "'Appbar (Parcels)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =8
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        HtmlText2_17 As htmlViewer:
+            Height: =89
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:604px;height:70px; border-radius: 40px; background-color:rgba(0, 134, 208, 1); box-shadow: 0px 0px 0px 0px rgba(0, 134, 208, 0.5), inset 0px 20px 28px 0px rgba(0, 134, 208, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =622
+            X: =8
+            Y: =152
+            ZIndex: =1
+
+        "'Add_Parcel_btn (Parcels)' As button":
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            HoverFill: =RGBA(0, 134, 208, 1)
+            OnSelect: =Navigate('Add Parcel Page')
+            PressedBorderColor: =RGBA(0, 134, 208, 1)
+            PressedColor: =RGBA(0, 134, 208, 1)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =24
+            Text: ="Add New Parcel"
+            Width: =604
+            X: =14
+            Y: =157
+            ZIndex: =9
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        HtmlText2_15 As htmlViewer:
+            Height: =85
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:514px;height:70px; border-radius: 40px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset 0px 0px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =529
+            X: =18
+            Y: =70
+            ZIndex: =2
+
+        "'Search (Parcels)' As text":
+            Clear: =true
+            Color: =RGBA(116, 116, 116, 1)
+            Default: =""
+            Fill: =Color.Transparent
+            Height: =70
+            HintText: ="Search for a parcel"
+            HoverFill: =RGBA(215, 215, 215, 0.8)
+            PaddingLeft: =10
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =21
+            Width: =514
+            X: =21
+            Y: =75
+            ZIndex: =4
+

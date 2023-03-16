@@ -1,0 +1,144 @@
+"'Other Foodbanks Page' As screen":
+
+    "'Topbar (Other Foodbanks)' As 'Topbar Cmpnt'":
+        ZIndex: =2
+
+    "'Other_Foodbanks_Gallery (Other Foodbanks)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =890
+        Items: =Search(Filter(Foodbanks, FoodbankPK <> SelectedFoodbank), 'Search (Other Foodbanks)'.Text, "cr967_name")
+        Layout: =Layout.Vertical
+        TemplateFill: |
+            =
+        TemplatePadding: =10
+        TemplateSize: =214
+        Visible: =Not('No Other Foodbanks'.Visible)
+        Y: =152
+        ZIndex: =3
+
+        HtmlText2 As htmlViewer:
+            Height: =219
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:0px; width:604px;height:200px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            OnSelect: =Select(Parent)
+            Width: =620
+            ZIndex: =1
+
+        Image4_2 As image:
+            BorderColor: =If(IsBlank(ThisItem.Image), RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 0))
+            BorderThickness: =1
+            Height: =132
+            Image: =If(IsBlank(ThisItem.Image), SampleImage, ThisItem.Image)
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =132
+            X: =25
+            Y: =43
+            ZIndex: =2
+
+        Icon7_2 As icon.NextArrow:
+            Height: =49
+            Icon: =Icon.NextArrow
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('View Foodbank Information Page');
+            Width: =49
+            X: =543
+            Y: =78
+            ZIndex: =3
+
+        Label10 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Name
+            Width: =365
+            X: =163
+            Y: =6
+            ZIndex: =4
+
+        Label5_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =73
+            OnSelect: =Select(Parent)
+            Size: =17
+            Text: =ThisItem.Address
+            Width: =380
+            X: =163
+            Y: =76
+            ZIndex: =5
+
+        Label5_2 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =59
+            OnSelect: =Select(Parent)
+            Size: =17
+            Text: =ThisItem.Town
+            Width: =380
+            X: =163
+            Y: =149
+            ZIndex: =6
+
+    "'No Other Foodbanks' As label":
+        Align: =Align.Center
+        Height: =161
+        Size: =21
+        Text: ="No results found."
+        Visible: =IsEmpty('Other_Foodbanks_Gallery (Other Foodbanks)'.AllItems)
+        Width: =428
+        X: =106
+        Y: =516
+        ZIndex: =5
+
+    "'Appbar (Other Foodbanks)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =6
+
+    "'Filter_btn Cmpnt_3' As 'Filter_btn Cmpnt'":
+        X: =535
+        Y: =67
+        ZIndex: =7
+
+    Group5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        HtmlText2_16 As htmlViewer:
+            Height: =85
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:514px;height:70px; border-radius: 40px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset 0px 0px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =529
+            X: =18
+            Y: =70
+            ZIndex: =1
+
+        "'Search (Other Foodbanks)' As text":
+            Clear: =true
+            Color: =RGBA(116, 116, 116, 1)
+            Default: =""
+            Fill: =Color.Transparent
+            Height: =70
+            HintText: ="Search for a foodbank"
+            HoverFill: =RGBA(215, 215, 215, 0.8)
+            PaddingLeft: =10
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =21
+            Width: =514
+            X: =21
+            Y: =75
+            ZIndex: =4
+

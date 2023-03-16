@@ -1,0 +1,241 @@
+"'Other Foodbank Stock Page' As screen":
+    Width: =
+
+    "'Banner (Other Foodbank Stock)' As rectangle":
+        Fill: |
+            =varNeitherColor
+        Height: =85
+        Width: =640
+        Y: =34
+        ZIndex: =2
+
+    "'Topbar (Other Foodbank Stock)' As 'Topbar Cmpnt'":
+        ZIndex: =3
+
+    "'Other_Foodbank_Stock_Gallery (Other Foodbank Stock)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =836
+        Items: |-
+            =Search(
+                Filter(
+                    Stock,
+                    And(
+                        FoodbankKey.FoodbankPK = 'Other_Foodbanks_Gallery (Other Foodbanks)'.Selected.FoodbankPK,
+                        Or(
+                            ShareItemWith = ShareWith.Foodbanks,
+                            ShareItemWith = ShareWith.'Foodbanks & Public'
+                        )
+                    )
+                ),
+                'Search (Other Foodbank Stock)'.Text,
+                "cr967_name"
+            )
+        Layout: =Layout.Vertical
+        TemplateFill: =
+        TemplatePadding: =10
+        TemplateSize: =238
+        Visible: =Not('Empty Stock (Other Foodbank Stock)'.Visible)
+        Y: =200
+        ZIndex: =4
+
+        HtmlText2_7 As htmlViewer:
+            Height: =238
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:0px; width:604px;height:220px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            OnSelect: =Select(Parent)
+            Width: =620
+            ZIndex: =1
+
+        Image3 As image:
+            BorderColor: =If(IsBlank(ThisItem.Image), RGBA(0, 18, 107, 1), RGBA(0, 0, 0, 0))
+            BorderThickness: =1
+            Height: =128
+            Image: =If(IsBlank(ThisItem.Image), SampleImage, ThisItem.Image)
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =128
+            X: =26
+            Y: =46
+            ZIndex: =2
+
+        Label18 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =48
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: ="*StockLevel for this item is not being shared."
+            Visible: |-
+                =Not(
+                    Or(
+                        ThisItem.ShareStockLevelWith = ShareWith.Foodbanks,
+                        ThisItem.ShareStockLevelWith = ShareWith.'Foodbanks & Public'
+                    )
+                )
+            Width: =483
+            X: =144
+            Y: =151
+            ZIndex: =3
+
+        Label19 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =133
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Name
+            Width: =242
+            X: =173
+            Y: =13
+            ZIndex: =4
+
+        Label18_1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =48
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: ="*Quantity for this item is not being shared."
+            Visible: |-
+                =Not(
+                    Or(
+                        ThisItem.ShareQuantityWith = ShareWith.Foodbanks,
+                        ThisItem.ShareQuantityWith = ShareWith.'Foodbanks & Public'
+                    )
+                )
+            Width: =483
+            X: =144
+            Y: =126
+            ZIndex: =5
+
+        Icon7_3 As icon.NextArrow:
+            Height: =49
+            Icon: =Icon.NextArrow
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('View Stock Information Other Foodbank Page');
+            Width: =49
+            X: =542
+            Y: =85
+            ZIndex: =6
+
+        Button11_1 As button:
+            BorderColor: =If(ThisItem.StockLevel=StockLevel.Understocked,varBoldUnderstockedColor,ThisItem.StockLevel=StockLevel.Neither,varNeitherColor,ThisItem.StockLevel=StockLevel.Overstocked,varBoldOverstockedColor,RGBA(0,0,0,0))
+            BorderThickness: =0
+            Color: =If(ThisItem.StockLevel=StockLevel.Understocked,varBoldUnderstockedColor,ThisItem.StockLevel=StockLevel.Overstocked,varBoldOverstockedColor)
+            DisabledBorderColor: =If(ThisItem.StockLevel=StockLevel.Understocked,varBoldUnderstockedColor,ThisItem.StockLevel=StockLevel.Neither,varNeitherColor,ThisItem.StockLevel=StockLevel.Overstocked,varBoldOverstockedColor,RGBA(0,0,0,0))
+            DisabledColor: =If(ThisItem.StockLevel=StockLevel.Understocked,varBoldUnderstockedColor, ThisItem.StockLevel=StockLevel.Neither,varNeitherColor,ThisItem.StockLevel=StockLevel.Overstocked,varBoldOverstockedColor,RGBA(0,0,0,0))
+            DisabledFill: =If(ThisItem.StockLevel=StockLevel.Understocked,RGBA(255, 0, 0, 0.25),ThisItem.StockLevel=StockLevel.Overstocked,RGBA(54, 176, 75, 0.2))
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =33
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =13
+            Text: =Upper(ThisItem.StockLevel)
+            Visible: =(ThisItem.StockLevel=StockLevel.Understocked || ThisItem.StockLevel=StockLevel.Overstocked) && (ThisItem.ShareStockLevelWith = ShareWith.Foodbanks || ThisItem.ShareStockLevelWith = ShareWith.'Foodbanks & Public')
+            Width: =166
+            X: =181
+            Y: =166
+            ZIndex: =7
+
+        Label29_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Quantity: "
+            Width: =109
+            X: =415
+            Y: =63
+            ZIndex: =8
+
+        Label32_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Quantity
+            Width: =53
+            X: =443
+            Y: =94
+            ZIndex: =9
+
+    "'Viewing stock at foodbank (Other Foodbank Stock)' As label":
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        Size: =21
+        Text: ="Viewing stock at " & 'Other_Foodbanks_Gallery (Other Foodbanks)'.Selected.Name
+        Width: =640
+        Y: =60
+        ZIndex: =6
+
+    "'Empty Stock (Other Foodbank Stock)' As label":
+        Align: =Align.Center
+        Height: =186
+        Size: =21
+        Text: ="No results."
+        Visible: =IsEmpty('Other_Foodbank_Stock_Gallery (Other Foodbank Stock)'.AllItems)
+        Width: =475
+        X: =82
+        Y: =525
+        ZIndex: =7
+
+    "'Appbar (Other Foodbank Stock)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =8
+
+    "'Filter_btn Cmpnt_4' As 'Filter_btn Cmpnt'":
+        X: =535
+        Y: =122
+        ZIndex: =9
+
+    Group17 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        HtmlText2_35 As htmlViewer:
+            Height: =85
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:514px;height:70px; border-radius: 40px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset 0px 0px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =529
+            X: =18
+            Y: =123
+            ZIndex: =1
+
+        "'Search (Other Foodbank Stock)' As text":
+            Clear: =true
+            Color: =RGBA(0, 18, 107, 1)
+            Default: =""
+            Fill: =Color.Transparent
+            Height: =70
+            HintText: ="Search for an item"
+            HoverFill: =RGBA(215, 215, 215, 0.8)
+            PaddingLeft: =10
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =21
+            Width: =514
+            X: =21
+            Y: =130
+            ZIndex: =5
+

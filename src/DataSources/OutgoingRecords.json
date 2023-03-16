@@ -1,0 +1,104 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr967_outgoingrecords",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr967_outgoingrecord",
+    "MaxGetRowsCount": 500,
+    "Name": "OutgoingRecords",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr967_collectionid": "CollectionID",
+      "cr967_datetime": "DateTime",
+      "cr967_FoodbankKey_": "FoodbankKey_",
+      "cr967_ItemKey": "ItemKey",
+      "cr967_outgoingpk": "OutgoingPK",
+      "cr967_outgoingrecord_AsyncOperations": "System Jobs",
+      "cr967_outgoingrecord_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr967_outgoingrecord_DuplicateBaseRecord": "Duplicate Records (cr967_outgoingrecord_DuplicateBaseRecord)",
+      "cr967_outgoingrecord_DuplicateMatchingRecord": "Duplicate Records (cr967_outgoingrecord_DuplicateMatchingRecord)",
+      "cr967_outgoingrecord_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr967_outgoingrecord_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr967_outgoingrecord_ProcessSession": "Process Sessions",
+      "cr967_outgoingrecord_SyncErrors": "Sync Errors",
+      "cr967_outgoingrecordid": "OutgoingRecord",
+      "cr967_quantity": "Quantity",
+      "cr967_VisitorKey": "VisitorKey",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "OutgoingRecords",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "OutgoingRecords (Views)",
+    "Name": "_cr967_outgoingrecord_views",
+    "RelatedEntityName": "OutgoingRecords",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "17d39664-1b74-ed11-81aa-000d3a4ae085": "Default View",
+      "6242b30f-3f3d-4986-b9b9-8e321d281ed7": "Active OutgoingRecords",
+      "859f5668-6cd2-4da2-b2eb-c332b71fda03": "OutgoingRecord Lookup View",
+      "b94cac95-3789-4370-904d-a4a0ae068bcf": "OutgoingRecord Advanced Find View",
+      "d8b2f49d-f432-425f-98d1-ac84264f977f": "OutgoingRecord Associated View",
+      "f861b012-d723-438a-ad5e-14f9ea36a8d7": "Inactive OutgoingRecords"
+    }
+  },
+  {
+    "DisplayName": "Status (OutgoingRecords)",
+    "Name": "cr967_outgoingrecord_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "OutgoingRecords"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "OutgoingRecords",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (OutgoingRecords)",
+    "Name": "cr967_outgoingrecord_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "OutgoingRecords"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "OutgoingRecords",
+    "Type": "OptionSetInfo"
+  }
+]

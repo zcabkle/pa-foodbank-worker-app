@@ -1,0 +1,100 @@
+"'Select Foodbank Page' As screen":
+
+    "'MyFoodbanks_Gallery (Select Foodbank)' As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Fill: |
+            =Color.White
+        Height: =997
+        Items: |+
+            =MyFoodbanks
+            
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =Set(SelectedFoodbank, ThisItem.cr967_foodbankpk);
+            Navigate('Home Page');
+        TemplateFill: |
+            =
+        TemplatePadding: =10
+        TemplateSize: =183
+        Width: =633
+        X: =7
+        Y: =123
+        ZIndex: =1
+
+        HtmlText2_14 As htmlViewer:
+            Height: =186
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:599px;height:170px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =613
+            ZIndex: =1
+
+        Title1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =27
+            Y: =19
+            ZIndex: =4
+
+        Subtitle1 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.PhoneNumber
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =27
+            Y: =114
+            ZIndex: =5
+
+        Label5 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Address
+            Width: =568
+            X: =22
+            Y: =44
+            ZIndex: =6
+
+        Icon7_5 As icon.NextArrow:
+            Height: =49
+            Icon: =Icon.NextArrow
+            OnSelect: |-
+                =Set(SelectedFoodbank, ThisItem.cr967_foodbankpk);
+                Navigate('Home Page');
+            Width: =49
+            X: =536
+            Y: =64
+            ZIndex: =7
+
+    "'Select Your Foodbank (Select Foodbank)' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =79
+        Size: =21
+        Text: ="Select Your Foodbank"
+        Underline: =true
+        Width: =321
+        X: =159
+        Y: =60
+        ZIndex: =2
+
+    "'Topbar_Empty (Select Foodbank)' As 'Topbar_Empty Cmpnt'":
+        ZIndex: =3
+

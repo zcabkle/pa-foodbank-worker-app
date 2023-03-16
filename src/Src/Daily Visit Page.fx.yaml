@@ -1,0 +1,163 @@
+"'Daily Visit Page' As screen":
+    OnVisible: =
+    Width: =
+
+    HtmlText2_33 As htmlViewer:
+        Height: =286
+        HtmlText: |-
+            ="<div style='width:620px;height:255px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =631
+        X: =9
+        Y: =72
+        ZIndex: =1
+
+    "'Topbar Cmpnt_1' As 'Topbar Cmpnt'":
+        ZIndex: =2
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(0, 134, 208, 1)
+        Height: =650
+        Items: =LookUp(colVisitsGroupedByDate, Text(ShortDate) = Gallery1.Selected.Date).DateGroup
+        Layout: =Layout.Vertical
+        TemplateFill: =
+        TemplatePadding: =10
+        TemplateSize: =214
+        Y: =386
+        ZIndex: =3
+
+        HtmlText2_4 As htmlViewer:
+            Height: =217
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:0px; width:604px;height:200px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =620
+            ZIndex: =1
+
+        Subtitle5 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.cr967_comments
+            VerticalAlign: =VerticalAlign.Top
+            Width: =
+            X: =
+            Y: =
+            ZIndex: =2
+
+        Label11 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            OnSelect: =Select(Parent)
+            Size: =17
+            Text: |-
+                ="Visit by " & LookUp(Visitors, VisitorPK = Text(ThisItem.cr967_VisitorKey.VisitorPK)).Forename & " " & LookUp(Visitors, VisitorPK = Text(ThisItem.cr967_VisitorKey.VisitorPK)).Surname & " at " & Text(ThisItem.cr967_datetime, "hh:mm:ss")
+            Underline: =true
+            Width: =563
+            X: =27
+            Y: =15
+            ZIndex: =3
+
+        Label6 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =131
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Person: " & ThisItem.cr967_person & Char(13) & "Family: " & ThisItem.cr967_family & Char(13) & "Children: " & ThisItem.cr967_children & Char(13) & "Pets: " & ThisItem.cr967_pets
+            Width: =135
+            X: =27
+            Y: =57
+            ZIndex: =4
+
+        Label17 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =115
+            Italic: =If(Not(ThisItem.cr967_comments), true, false)
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Comments: " & If(Not(ThisItem.cr967_comments), "No comments recorded for this visit.", ThisItem.cr967_comments)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =401
+            X: =177
+            Y: =72
+            ZIndex: =5
+
+    Label15 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: ="Visits"
+        Underline: =true
+        Width: =640
+        Y: =329
+        ZIndex: =4
+
+    "'Appbar Cmpnt_1' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =5
+
+    Icon4 As icon.ArrowUp:
+        Color: =RGBA(54, 176, 75, 1)
+        Icon: =Icon.ArrowUp
+        X: =101
+        Y: =154
+        ZIndex: =6
+
+    Icon5 As icon.ArrowDown:
+        Color: =RGBA(255, 0, 0, 1)
+        X: =100
+        Y: =230
+        ZIndex: =7
+
+    Label22 As label:
+        Color: =RGBA(54, 176, 75, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Quantity of items in: " & If(CountRows(Filter(colSumOfIncomingRecords, Text(ShortDate) = Gallery1.Selected.Date)) > 0, LookUp(colSumOfIncomingRecords, Text(ShortDate) = Gallery1.Selected.Date).'Sum of Incoming', 0)
+        Width: =359
+        X: =165
+        Y: =148
+        ZIndex: =8
+
+    Label22_1 As label:
+        Color: =RGBA(255, 0, 0, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Quantity of items out: " & If(CountRows(Filter(colSumOfOutgoingRecords, Text(ShortDate) = Gallery1.Selected.Date)) > 0, LookUp(colSumOfOutgoingRecords, Text(ShortDate) = Gallery1.Selected.Date).'Sum of Outgoing', 0)
+        Width: =374
+        X: =165
+        Y: =224
+        ZIndex: =9
+
+    Label30 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: ="More information about " & Gallery1.Selected.Date
+        Underline: =true
+        Width: =640
+        Y: =72
+        ZIndex: =10
+

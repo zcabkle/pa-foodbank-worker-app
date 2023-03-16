@@ -1,0 +1,117 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr967_foodbanks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr967_foodbank",
+    "MaxGetRowsCount": 500,
+    "Name": "Foodbanks",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr967_address": "Address",
+      "cr967_cr967_notification_ToFoodbankKey_cr967_fo": "Notifications (cr967_cr967_notification_ToFoodbankKey_cr967_fo)",
+      "cr967_email": "Email",
+      "cr967_foodbank_AsyncOperations": "System Jobs",
+      "cr967_foodbank_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr967_foodbank_DuplicateBaseRecord": "Duplicate Records (cr967_foodbank_DuplicateBaseRecord)",
+      "cr967_foodbank_DuplicateMatchingRecord": "Duplicate Records (cr967_foodbank_DuplicateMatchingRecord)",
+      "cr967_Foodbank_FoodbankKey_cr967_Item": "Stock",
+      "cr967_Foodbank_FoodbankKey_cr967_Notifica": "Notifications (cr967_Foodbank_FoodbankKey_cr967_Notifica)",
+      "cr967_Foodbank_FoodbankKey_cr967_Parcel": "Parcels",
+      "cr967_Foodbank_FoodbankKey_cr967_Visits": "Visits",
+      "cr967_Foodbank_FoodbankWorker_Relationship": "Users",
+      "cr967_foodbank_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr967_foodbank_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr967_foodbank_ProcessSession": "Process Sessions",
+      "cr967_foodbank_SyncErrors": "Sync Errors",
+      "cr967_foodbankid": "Foodbank",
+      "cr967_foodbankpk": "FoodbankPK",
+      "cr967_image": "Image",
+      "cr967_imageid": "cr967_ImageId",
+      "cr967_IncomingRecord_FoodbankKey__cr967_F": "IncomingRecords",
+      "cr967_Manager": "Manager",
+      "cr967_name": "Name",
+      "cr967_notes": "Notes",
+      "cr967_operatinghours": "OperatingHours",
+      "cr967_OutgoingRecord_FoodbankKey__cr967_F": "OutgoingRecords",
+      "cr967_phonenumber": "PhoneNumber",
+      "cr967_postcode": "PostCode",
+      "cr967_town": "Town",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Foodbanks",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Foodbanks (Views)",
+    "Name": "_cr967_foodbank_views",
+    "RelatedEntityName": "Foodbanks",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "47fa2bb5-a8be-427e-be13-56f942823d69": "Foodbank Lookup View",
+      "6a8ebf98-1a74-ed11-81aa-000d3a4ae085": "Default View",
+      "74501334-6404-49a5-b61a-156bb4ef7363": "Foodbank Associated View",
+      "a8731a3d-e9b3-4371-ad19-6dd90482fa86": "Foodbank Advanced Find View",
+      "a88b7d1f-7964-4637-86b8-6a8d0bd7cbde": "Inactive Foodbanks",
+      "c8402f74-86f8-4116-8bf6-d568ab2ffbbe": "Active Foodbanks"
+    }
+  },
+  {
+    "DisplayName": "Status (Foodbanks)",
+    "Name": "cr967_foodbank_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Foodbanks"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Foodbanks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Foodbanks)",
+    "Name": "cr967_foodbank_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Foodbanks"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Foodbanks",
+    "Type": "OptionSetInfo"
+  }
+]

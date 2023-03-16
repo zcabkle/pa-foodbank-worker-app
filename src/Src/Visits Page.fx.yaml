@@ -1,0 +1,685 @@
+"'Visits Page' As screen":
+    OnVisible: |+
+        =ClearCollect(
+            colVisitsTable,
+            ShowColumns(
+                Filter(
+                    Visits,
+                    FoodbankKey.FoodbankPK = SelectedFoodbank
+                ),
+                "cr967_datetime",
+                "cr967_person",
+                "cr967_comments",
+                "cr967_children",
+                "cr967_family",
+                "cr967_pets",
+                "cr967_VisitorKey"
+            )
+        );
+        ClearCollect(
+            colVisitsGroupedByDate,
+            GroupBy(
+                AddColumns(
+                    colVisitsTable,
+                    "ShortDate",
+                    DateValue(
+                        Text(
+                            cr967_datetime,
+                            DateTimeFormat.ShortDate
+                        )
+                    )
+                ),
+                "ShortDate",
+                "DateGroup"
+            )
+        );
+        ClearCollect(
+            colDisplayedVisits,
+            {
+                Date: "",
+                Person: 0,
+                Children: 0,
+                Family: 0,
+                Pets: 0
+            }
+        );
+        ForAll(
+            colVisitsGroupedByDate As record,
+            Patch(
+                colDisplayedVisits,
+                Defaults(colDisplayedVisits),
+                {
+                    Date: record.ShortDate,
+                    Person: Sum(
+                        record.DateGroup,
+                        cr967_person
+                    ),
+                    Children: Sum(
+                        record.DateGroup,
+                        cr967_children
+                    ),
+                    Family: Sum(
+                        record.DateGroup,
+                        cr967_family
+                    ),
+                    Pets: Sum(
+                        record.DateGroup,
+                        cr967_pets
+                    )
+                }
+            )
+        );
+        Remove(
+            colDisplayedVisits,
+            LookUp(
+                colDisplayedVisits,
+                Date = ""
+            )
+        );
+        ClearCollect(
+            colSumOfOutgoingRecords,
+            AddColumns(
+                GroupBy(
+                    AddColumns(
+                        Filter(
+                            OutgoingRecords,
+                            FoodbankKey_.FoodbankPK = SelectedFoodbank
+                        ),
+                        "ShortDate",
+                        DateValue(
+                            Text(
+                                cr967_datetime,
+                                DateTimeFormat.ShortDate
+                            )
+                        )
+                    ),
+                    "ShortDate",
+                    "DateGroup"
+                );
+                ,
+                "Sum of Outgoing",
+                Sum(
+                    DateGroup,
+                    Quantity
+                )
+            )
+        );
+        ClearCollect(
+            colSumOfIncomingRecords,
+            AddColumns(
+                GroupBy(
+                    AddColumns(
+                        Filter(
+                            IncomingRecords,
+                            FoodbankKey_.FoodbankPK = SelectedFoodbank
+                        ),
+                        "ShortDate",
+                        DateValue(
+                            Text(
+                                cr967_datetime,
+                                DateTimeFormat.ShortDate
+                            )
+                        )
+                    ),
+                    "ShortDate",
+                    "DateGroup"
+                );
+                ,
+                "Sum of Incoming",
+                Sum(
+                    DateGroup,
+                    Quantity
+                )
+            )
+        );
+        
+    Width: =
+
+    HtmlText2_34 As htmlViewer:
+        Height: =204
+        HtmlText: |-
+            ="<div style='width:620px;height:190px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =631
+        X: =9
+        Y: =73
+        ZIndex: =1
+
+    Rectangle4 As rectangle:
+        Fill: =RGBA(243, 243, 243, 0.8)
+        Height: =121
+        Width: =640
+        Y: =951
+        ZIndex: =3
+
+    "'Appbar (Visits)' As 'Appbar Cmpnt'":
+        Width: =640
+        Y: =1036
+        ZIndex: =4
+
+    "'Topbar (Visits)' As 'Topbar Cmpnt'":
+        ZIndex: =5
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =609
+        Items: =colDisplayedVisits
+        Layout: =Layout.Vertical
+        TemplateFill: =RGBA(243, 243, 243, 0.8)
+        TemplatePadding: =0
+        TemplateSize: =61
+        Visible: =Not(Label7.Visible)
+        Y: =342
+        ZIndex: =6
+
+        Separator3 As rectangle:
+            Height: =0
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =1
+
+        Label4 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =61
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Date
+            Width: =105
+            X: =9
+            ZIndex: =2
+
+        Label4_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Person
+            Width: =56
+            X: =141
+            Y: =7
+            ZIndex: =3
+
+        Label4_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Family
+            Width: =88
+            X: =213
+            ZIndex: =4
+
+        Label4_3 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Children
+            Width: =88
+            X: =301
+            ZIndex: =5
+
+        Label4_4 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Pets
+            Width: =88
+            X: =389
+            ZIndex: =6
+
+        Rectangle3 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =61
+            OnSelect: =Select(Parent)
+            Width: =1
+            X: =125
+            ZIndex: =7
+
+        Rectangle3_5 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =61
+            OnSelect: =Select(Parent)
+            Width: =1
+            X: =213
+            ZIndex: =8
+
+        Rectangle3_6 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =61
+            OnSelect: =Select(Parent)
+            Width: =1
+            X: =301
+            ZIndex: =9
+
+        Rectangle3_7 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =61
+            OnSelect: =Select(Parent)
+            Width: =0.5
+            X: =389
+            ZIndex: =10
+
+        Rectangle3_8 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =61
+            OnSelect: =Select(Parent)
+            Width: =0.5
+            X: =477
+            ZIndex: =11
+
+        Rectangle5 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =0.5
+            OnSelect: =Select(Parent)
+            Width: =640
+            Y: =60
+            ZIndex: =12
+
+        Group15 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            HtmlText2_30 As htmlViewer:
+                Height: =45
+                HtmlText: |-
+                    ="<div style='margin-left:5px; margin-top:5px; width:133px;height:30px; border-radius: 20px; background-color:rgba(0, 18, 107, 1); box-shadow: 0px 0px 0px 0px rgba(0, 18, 107, 0.5), inset 0px 10px 14px 0px rgba(0, 18, 107, 0.6), inset 0px 8px 14px 0px rgb(255, 255, 255);'></div>"
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Width: =142
+                X: =489
+                Y: =10
+                ZIndex: =13
+
+            Button3 As button:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =30
+                HoverFill: =RGBA(0, 18, 107, 1)
+                OnSelect: |-
+                    =Select(Parent);
+                    Navigate('Daily Visit Page');
+                PressedBorderColor: =RGBA(0, 18, 107, 1)
+                PressedColor: =RGBA(0, 18, 107, 1)
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Size: =17
+                Text: ="More Info"
+                Width: =133
+                X: =493
+                Y: =15
+                ZIndex: =14
+
+    Rectangle1 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =2
+        Width: =640
+        Y: =949
+        ZIndex: =7
+
+    Label21 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        Size: =15
+        Text: ="Total"
+        Width: =125
+        Y: =963
+        ZIndex: =8
+
+    Rectangle3_1 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =85
+        OnSelect: =
+        Width: =1
+        X: =125
+        Y: =951
+        ZIndex: =9
+
+    Label4_5 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        OnSelect: =
+        Size: =20
+        Text: =Sum(colDisplayedVisits, Person)
+        Width: =88
+        X: =125
+        Y: =963
+        ZIndex: =10
+
+    Label4_6 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        OnSelect: =
+        Size: =20
+        Text: =Sum(colDisplayedVisits, Family)
+        Width: =88
+        X: =213
+        Y: =963
+        ZIndex: =11
+
+    Label4_7 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        OnSelect: =
+        Size: =20
+        Text: =Sum(colDisplayedVisits, Children)
+        Width: =88
+        X: =301
+        Y: =963
+        ZIndex: =12
+
+    Label4_8 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        OnSelect: =
+        Size: =20
+        Text: =Sum(colDisplayedVisits, Pets)
+        Width: =88
+        X: =389
+        Y: =963
+        ZIndex: =13
+
+    Rectangle1_1 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =1.5
+        Width: =640
+        Y: =340
+        ZIndex: =14
+
+    Rectangle3_2 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =55
+        OnSelect: =
+        Width: =1
+        X: =125
+        Y: =287
+        ZIndex: =15
+
+    Rectangle3_9 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =55
+        OnSelect: =
+        Width: =1
+        X: =213
+        Y: =287
+        ZIndex: =16
+
+    Rectangle3_10 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =55
+        OnSelect: =
+        Width: =0.5
+        X: =301
+        Y: =287
+        ZIndex: =17
+
+    Rectangle3_11 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =55
+        OnSelect: =
+        Width: =0.5
+        X: =389
+        Y: =287
+        ZIndex: =18
+
+    Rectangle3_12 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =55
+        OnSelect: =
+        Width: =0.5
+        X: =477
+        Y: =287
+        ZIndex: =19
+
+    Label3 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =53
+        Text: ="Person"
+        Width: =88
+        X: =125
+        Y: =287
+        ZIndex: =20
+
+    Label3_1 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =53
+        Text: |-
+            ="Family
+            "
+        Width: =88
+        X: =214
+        Y: =287
+        ZIndex: =21
+
+    Label3_2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =53
+        Text: |-
+            ="Children
+            "
+        Width: =88
+        X: =302
+        Y: =288
+        ZIndex: =22
+
+    Label3_3 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =53
+        Text: |-
+            ="Pets
+            "
+        Width: =88
+        X: =390
+        Y: =287
+        ZIndex: =23
+
+    Label3_4 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =53
+        Text: |-
+            ="Date
+            "
+        Width: =126
+        Y: =287
+        ZIndex: =24
+
+    Rectangle3_3 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =85
+        OnSelect: =
+        Width: =0.5
+        X: =214
+        Y: =951
+        ZIndex: =25
+
+    Rectangle3_4 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =85
+        OnSelect: =
+        Width: =0.5
+        X: =302
+        Y: =951
+        ZIndex: =26
+
+    Rectangle3_13 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =85
+        OnSelect: =
+        Width: =0.5
+        X: =390
+        Y: =951
+        ZIndex: =27
+
+    Rectangle3_14 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =85
+        OnSelect: =
+        Width: =0.5
+        X: =478
+        Y: =951
+        ZIndex: =28
+
+    Label7 As label:
+        Align: =Align.Center
+        Height: =70
+        Size: =21
+        Text: ="This foodbank doesnt have any visits records to display."
+        Visible: =IsEmpty(Gallery1.AllItems)
+        Width: =560
+        X: =40
+        Y: =469
+        ZIndex: =29
+
+    Group14 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =30
+
+        HtmlText2_31 As htmlViewer:
+            Height: =45
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:110px;height:37px; border-radius: 40px; background-color:rgba(54, 176, 75, 1); box-shadow: 0px 0px 0px 0px rgba(54, 176, 75, 0.5), inset 0px 10px 14px 0px rgba(54, 176, 75, 0.6), inset 0px 8px 14px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =121
+            X: =500
+            Y: =970
+            ZIndex: =30
+
+        Button4 As button:
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =37
+            HoverFill: =RGBA(54, 176, 75, 1)
+            OnSelect: =ExportToExcel.Run(User().Email, JSON(colDisplayedVisits, JSONFormat.IncludeBinaryData)); Notify("Please check your inbox", NotificationType.Success);
+            PressedBorderColor: =RGBA(54, 176, 75, 1)
+            PressedColor: =RGBA(54, 176, 75, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =17
+            Text: ="Export"
+            Width: =110
+            X: =505
+            Y: =975
+            ZIndex: =31
+
+    Rectangle1_2 As rectangle:
+        Fill: =RGBA(0, 18, 107, 1)
+        Height: =1.5
+        Width: =640
+        Y: =286
+        ZIndex: =32
+
+    Label31 As label:
+        Color: =RGBA(54, 176, 75, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Total Items In: " & Sum(colSumOfIncomingRecords, 'Sum of Incoming')
+        Width: =326
+        X: =104
+        Y: =95
+        ZIndex: =33
+
+    Label31_1 As label:
+        Color: =RGBA(255, 0, 0, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Total Items Out: " & Sum(colSumOfOutgoingRecords, 'Sum of Outgoing')
+        Width: =279
+        X: =104
+        Y: =186
+        ZIndex: =34
+
+    Icon4_1 As icon.ArrowUp:
+        Color: =RGBA(54, 176, 75, 1)
+        Icon: =Icon.ArrowUp
+        X: =43
+        Y: =95
+        ZIndex: =35
+
+    Icon5_1 As icon.ArrowDown:
+        Color: =RGBA(255, 0, 0, 1)
+        X: =40
+        Y: =189
+        ZIndex: =36
+
+    Icon6 As icon.Trending:
+        Height: =77
+        Icon: =Icon.Trending
+        Width: =81
+        X: =473
+        Y: =92
+        ZIndex: =37
+
+    Group16 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =38
+
+        HtmlText2_32 As htmlViewer:
+            Height: =66
+            HtmlText: |-
+                ="<div style='width:202px;height:54px; border-radius: 40px; background-color:rgba(0, 18, 107, 1); box-shadow: 0px 0px 0px 0px rgba(0, 18, 107, 0.5), inset 0px 10px 14px 0px rgba(0, 18, 107, 0.6), inset 0px 8px 14px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =203
+            X: =412
+            Y: =173
+            ZIndex: =2
+
+        Button14 As button:
+            Fill: =Color.Transparent
+            Height: =51
+            HoverFill: =RGBA(0, 18, 107, 1)
+            OnSelect: =Navigate('Graphs Page');
+            PressedBorderColor: =RGBA(0, 18, 107, 1)
+            PressedColor: =RGBA(0, 18, 107, 1)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =16
+            Text: ="Graphical View"
+            Width: =202
+            X: =413
+            Y: =174
+            ZIndex: =38
+

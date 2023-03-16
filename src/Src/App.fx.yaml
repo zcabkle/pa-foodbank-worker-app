@@ -1,0 +1,184 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =// Appbar Setup
+        ClearCollect(
+            colAppBar,
+            {
+                Title: "Home",
+                Screen: 'Home Page',
+                Id: 1,
+                ParentTab: ""
+            },
+            {
+                Title: "Add Item",
+                Screen: 'Add Item Page',
+                Id: 1,
+                ParentTab: "Home"
+            },
+            {
+                Title: "View Stock Information",
+                Screen: 'View Stock Information Page',
+                Id: 1,
+                ParentTab: "Home"
+            },
+            {
+                Title: "Edit Stock Information",
+                Screen: 'Edit Stock Information Page',
+                Id: 1,
+                ParentTab: "Home"
+            },
+            {
+                Title: "Parcels",
+                Screen: 'Parcels Page',
+                Id: 2,
+                ParentTab: ""
+            },
+            {
+                Title: "View Parcel Information",
+                Screen: 'View Parcel Information Page',
+                Id: 2,
+                ParentTab: "Parcels"
+            },
+            {
+                Title: "Edit Parcel Information",
+                Screen: 'Edit Parcel Information Page',
+                Id: 2,
+                ParentTab: "Parcels"
+            },
+            {
+                Title: "Add Parcel",
+                Screen: 'Add Parcel Page',
+                Id: 2,
+                ParentTab: "Parcels"
+            },
+            {
+                Title: "OtherFoodbanks",
+                Screen: 'Other Foodbanks Page',
+                Id: 3,
+                ParentTab: ""
+            },
+            {
+                Title: "View Foodbank Information",
+                Screen: 'View Foodbank Information Page',
+                Id: 3,
+                ParentTab: "OtherFoodbanks"
+            },
+            {
+                Title: "Other Foodbank Stock",
+                Screen: 'Other Foodbank Stock Page',
+                Id: 3,
+                ParentTab: "OtherFoodbanks"
+            },
+            {
+                Title: "View Stock Information Other Foodbank",
+                Screen: 'View Stock Information Other Foodbank Page',
+                Id: 3,
+                ParentTab: "OtherFoodbanks"
+            },
+            {
+                Title: "Other Foodbank Parcels",
+                Screen: 'Other Foodbank Parcels Page',
+                Id: 3,
+                ParentTab: "OtherFoodbanks"
+            },
+            {
+                Title: "View Parcel Information Other Foodbank",
+                Screen: 'View Parcel Information Other Foodbank Page',
+                Id: 3,
+                ParentTab: "OtherFoodbanks"
+            },
+            {
+                Title: "Basket",
+                Screen: 'Basket Page',
+                Id: 4,
+                ParentTab: ""
+            },
+            {
+                Title: "Submit Incoming Transaction",
+                Screen: 'Submit Incoming Transaction Page',
+                Id: 4,
+                ParentTab: "Basket"
+            },
+            {
+                Title: "Submit Outgoing Transaction",
+                Screen: 'Submit Outgoing Transaction Page',
+                Id: 4,
+                ParentTab: "Basket"
+            },
+            {
+                Title: "Fill Visit Info",
+                Screen: 'Fill Visit Info Page',
+                Id: 4,
+                ParentTab: "Basket"
+            },
+            {
+                Title: "Add Visitor",
+                Screen: 'Add Visitor Page',
+                Id: 4,
+                ParentTab: "Basket"
+            },
+            {
+                Title: "Add Supplier",
+                Screen: 'Add Supplier Page',
+                Id: 4,
+                ParentTab: "Basket"
+            },
+            {
+                Title: "Visits",
+                Screen: 'Visits Page',
+                Id: 5,
+                ParentTab: ""
+            },
+            {
+                Title: "Daily Visit",
+                Screen: 'Daily Visit Page',
+                Id: 5,
+                ParentTab: "Visits"
+            },
+            {
+                Title: "Graphs",
+                Screen: 'Graphs Page',
+                Id: 5,
+                ParentTab: "Visits"
+            }
+        );
+        
+        Set(
+            varMenuPrimaryColor,
+            RGBA(0, 18, 107, 1)
+        );
+        Set(
+            varMenuSecondaryColor,
+            RGBA(228, 120, 255, 1)
+        );
+        Set(varBoldOverstockedColor, RGBA(54, 176, 75, 1));
+        Set(varSoftOverstockedColor, RGBA(54, 176, 75, 0.2));
+        Set(varBoldUnderstockedColor, RGBA(255, 0, 0, 1));
+        Set(varSoftUnderstockedColor, RGBA(255, 0, 0, 0.25));
+        Set(varNeitherColor, RGBA(245, 245, 245, 1));
+        Set(
+            varTabSelected,
+            0
+        );
+        Set(
+            SelectedFoodbank,
+            ""
+        );
+        ClearCollect(
+            MyFoodbanks,
+            LookUp(
+                Users,
+                internalemailaddress = User().Email
+            ).'Foodbanks (cr967_Foodbank_FoodbankWorker_Relationship)'
+        );
+        ClearCollect(
+            colBasket,
+            {
+                ID: Blank(),
+                Name: Blank(),
+                Quantity: Blank()
+            }
+        );
+    StartScreen: ='Select Foodbank Page'
+

@@ -1,0 +1,225 @@
+"'View Parcel Information Page' As screen":
+
+    "'Banner (View Parcel Information)' As rectangle":
+        Fill: =varNeitherColor
+        Height: =77
+        Width: =640
+        Y: =42
+        ZIndex: =1
+
+    "'Appbar (View Parcel Information)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =2
+
+    "'Topbar (View Parcel Information)' As 'Topbar Cmpnt'":
+        ZIndex: =3
+
+    DisplayParcelForm As formViewer:
+        DataSource: =Parcels
+        Height: =876
+        Item: ='Parcels_Gallery (Parcels)'.Selected
+        Width: =640
+        Y: =128
+        ZIndex: =4
+
+        Image_DataCard5 As typedDataCard.largeImageViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_image"
+            Default: =If(IsBlank(ThisItem.Image), SampleImage, ThisItem.Image)
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Parcels],DataSourceInfo.DisplayName,"cr967_image")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardValue7 As image:
+                DisplayMode: =Parent.DisplayMode
+                Height: =230
+                Image: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =153
+                ZIndex: =2
+
+        ShareParcelWith_DataCard1 As typedDataCard.comboBoxOptionSetSingleViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_shareparcelwith"
+            Default: =ThisItem.ShareParcelWith
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Parcels],DataSourceInfo.DisplayName,"cr967_shareparcelwith")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue62.Selected
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey62 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue62.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue62 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices(ShareWith)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =18
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey62.X + DataCardKey62.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage46 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue62.Y + DataCardValue62.Height
+                ZIndex: =3
+
+            StarVisible46 As label:
+                Align: =Align.Center
+                Height: =DataCardKey62.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey62.Y
+                ZIndex: =4
+
+        Name_DataCard8 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_name"
+            Default: =ThisItem.Name
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Parcels],DataSourceInfo.DisplayName,"cr967_name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =4
+
+            DataCardKey60 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue60.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue60 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey60.X + DataCardKey60.Width
+                Y: =10
+                ZIndex: =2
+
+        Description_DataCard8 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr967_description"
+            Default: =ThisItem.Description
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Parcels],DataSourceInfo.DisplayName,"cr967_description")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =4
+
+            DataCardKey61 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue61.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue61 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey61.X + DataCardKey61.Width
+                Y: =10
+                ZIndex: =2
+
+    "'Parcel Name (View Parcel Information)' As label":
+        Align: =Align.Center
+        Color: =RGBA(0, 18, 107, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =21
+        Text: ='Parcels_Gallery (Parcels)'.Selected.Name
+        Width: =469
+        X: =85
+        Y: =72
+        ZIndex: =5
+
+    "'Delete_Icon (View Parcel Information)' As icon.Trash":
+        Height: =45
+        Icon: =Icon.Trash
+        OnSelect: |-
+            =RemoveIf(Parcels, ParcelPK = 'Parcels_Gallery (Parcels)'.Selected.ParcelPK);
+            Navigate('Home Page');
+        Width: =45
+        X: =10
+        Y: =68
+        ZIndex: =6
+
+    "'Edit_Icon (View Parcel Information)' As icon.Edit":
+        Height: =45
+        Icon: =Icon.Edit
+        OnSelect: =Navigate('Edit Parcel Information Page')
+        Width: =45
+        X: =583
+        Y: =68
+        ZIndex: =7
+

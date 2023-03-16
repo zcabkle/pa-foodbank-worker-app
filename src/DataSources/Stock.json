@@ -1,0 +1,192 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr967_items",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr967_item",
+    "MaxGetRowsCount": 500,
+    "Name": "Stock",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr967_description": "Description",
+      "cr967_FoodbankKey": "FoodbankKey",
+      "cr967_image": "Image",
+      "cr967_imageid": "cr967_ImageId",
+      "cr967_item_AsyncOperations": "System Jobs",
+      "cr967_item_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr967_item_DuplicateBaseRecord": "Duplicate Records (cr967_item_DuplicateBaseRecord)",
+      "cr967_item_DuplicateMatchingRecord": "Duplicate Records (cr967_item_DuplicateMatchingRecord)",
+      "cr967_Item_ItemKey_cr967_IncomingRecord": "IncomingRecords",
+      "cr967_Item_ItemKey_cr967_OutgoingRecord": "OutgoingRecords",
+      "cr967_item_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr967_item_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr967_item_ProcessSession": "Process Sessions",
+      "cr967_item_SyncErrors": "Sync Errors",
+      "cr967_itemcategory": "ItemCategory",
+      "cr967_itemid": "Item",
+      "cr967_itempk": "ItemPK",
+      "cr967_name": "Name",
+      "cr967_quantity": "Quantity",
+      "cr967_shareitemwith": "ShareItemWith",
+      "cr967_sharequantitywith": "ShareQuantityWith",
+      "cr967_sharestocklevelwith": "ShareStockLevelWith",
+      "cr967_stocklevel": "StockLevel",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Stock",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Stock (Views)",
+    "Name": "_cr967_item_views",
+    "RelatedEntityName": "Stock",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5959e5c2-1b74-ed11-81aa-000d3a4ae085": "Default View",
+      "8a739104-6c8a-42f7-95c0-f55082a59c14": "Item Advanced Find View",
+      "902c54dc-7623-4afb-a1f5-c12814092420": "Item Lookup View",
+      "a1793078-1f28-4446-8246-d2dff89977ae": "Active Items",
+      "e30775e4-de9b-4156-a2fb-22d6462e7e46": "Inactive Items",
+      "fce63f60-b794-4d1b-b2ee-ffabfedbba55": "Item Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Stock)",
+    "Name": "cr967_item_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Stock"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Stock",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Stock)",
+    "Name": "cr967_item_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Stock"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Stock",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ItemCategory",
+    "Name": "cr967_itemcategory",
+    "OptionSetInfoNameMapping": {
+      "0": "Fresh/Fruit/Veg",
+      "1": "Dairy",
+      "2": "Toiletries",
+      "3": "Cereal",
+      "4": "Canned",
+      "5": "Meat",
+      "6": "Bread",
+      "7": "Miscellaneous",
+      "8": "Dry Food/Long Life"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr967_itemcategory",
+        "OptionSetReferenceEntityName": "Stock"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr967_itemcategory",
+    "RelatedEntityName": "Stock",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ShareWith",
+    "Name": "cr967_sharewith",
+    "OptionSetInfoNameMapping": {
+      "0": "No-one",
+      "1": "Foodbanks",
+      "2": "Foodbanks & Public"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr967_sharequantitywith",
+        "OptionSetReferenceEntityName": "Stock"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "cr967_sharestocklevelwith",
+        "OptionSetReferenceEntityName": "Stock"
+      },
+      "OptionSetReferenceItem2": {
+        "OptionSetReferenceColumnName": "cr967_shareitemwith",
+        "OptionSetReferenceEntityName": "Stock"
+      },
+      "OptionSetReferenceItem3": {
+        "OptionSetReferenceColumnName": "cr967_shareparcelwith",
+        "OptionSetReferenceEntityName": "Parcels"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr967_sharequantitywith",
+    "RelatedEntityName": "Stock",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "StockLevel",
+    "Name": "cr967_stocklevel",
+    "OptionSetInfoNameMapping": {
+      "0": "Understocked",
+      "1": "Neither",
+      "2": "Overstocked"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr967_stocklevel",
+        "OptionSetReferenceEntityName": "Stock"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr967_stocklevel",
+    "RelatedEntityName": "Stock",
+    "Type": "OptionSetInfo"
+  }
+]

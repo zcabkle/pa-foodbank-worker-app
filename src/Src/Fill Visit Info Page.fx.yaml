@@ -1,0 +1,323 @@
+"'Fill Visit Info Page' As screen":
+    OnVisible: |-
+        =Reset('Pets_Dropdown (Fill Visit Info)');
+        Reset('Children_Dropdown (Fill Visit Info)');
+        Reset('Comments_Input (Fill Visit Info)');
+        Reset('Person_Dropdown (Fill Visit Info)');
+        Reset('Family_Dropdown (Fill Visit Info)');
+
+    "'Appbar (Fill Visit Info)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =2
+
+    "'Topbar (Fill Visit Info)' As 'Topbar Cmpnt'":
+        ZIndex: =3
+
+    "'Person_Dropdown (Fill Visit Info)' As dropdown":
+        ChevronBackground: =RGBA(219, 219, 219, 1)
+        ChevronDisabledBackground: =RGBA(149, 149, 149, 1)
+        ChevronDisabledFill: =RGBA(0, 0, 0, 0)
+        ChevronFill: =RGBA(0, 18, 107, 1)
+        ChevronHoverBackground: =RGBA(116, 116, 116, 1)
+        ChevronHoverFill: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(0, 18, 107, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        HoverColor: =RGBA(0, 18, 107, 1)
+        HoverFill: =RGBA(153, 207, 236, 1)
+        Items: =Sequence( 10, 0, 1 )
+        PressedColor: =RGBA(0, 18, 107, 1)
+        PressedFill: =RGBA(153, 207, 236, 1)
+        SelectionColor: =RGBA(0, 18, 107, 1)
+        SelectionFill: =RGBA(153, 207, 236, 1)
+        Size: =20
+        Width: =278
+        X: =26
+        Y: =266
+        ZIndex: =4
+
+    "'Family_Dropdown (Fill Visit Info)' As dropdown":
+        ChevronBackground: =RGBA(219, 219, 219, 1)
+        ChevronFill: =RGBA(0, 18, 107, 1)
+        ChevronHoverBackground: =RGBA(116, 116, 116, 1)
+        ChevronHoverFill: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(0, 18, 107, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        HoverBorderColor: =RGBA(0, 18, 107, 1)
+        HoverColor: =RGBA(0, 18, 107, 1)
+        HoverFill: =RGBA(153, 207, 236, 1)
+        Items: =Sequence( 10, 0, 1 )
+        PressedBorderColor: =RGBA(0, 18, 107, 1)
+        PressedColor: =RGBA(0, 18, 107, 1)
+        PressedFill: =RGBA(153, 207, 236, 1)
+        SelectionFill: =RGBA(153, 207, 236, 1)
+        Size: =21
+        Width: =278
+        X: =331
+        Y: =266
+        ZIndex: =5
+
+    "'Children_Dropdown (Fill Visit Info)' As dropdown":
+        ChevronBackground: =RGBA(219, 219, 219, 1)
+        ChevronDisabledFill: =RGBA(0, 0, 0, 0)
+        ChevronFill: =RGBA(0, 18, 107, 1)
+        ChevronHoverBackground: =RGBA(116, 116, 116, 1)
+        ChevronHoverFill: =RGBA(0, 18, 107, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        HoverColor: =RGBA(0, 18, 107, 1)
+        HoverFill: =RGBA(153, 207, 236, 1)
+        Items: =Sequence( 10, 0, 1 )
+        PressedBorderColor: =RGBA(0, 18, 107, 1)
+        PressedColor: =RGBA(0, 18, 107, 1)
+        PressedFill: =RGBA(153, 207, 236, 1)
+        SelectionColor: =RGBA(0, 18, 107, 1)
+        SelectionFill: =RGBA(153, 207, 236, 1)
+        Size: =21
+        Width: =278
+        X: =26
+        Y: =435
+        ZIndex: =6
+
+    "'Pets_Dropdown (Fill Visit Info)' As dropdown":
+        ChevronBackground: =RGBA(219, 219, 219, 1)
+        ChevronDisabledFill: =RGBA(0, 0, 0, 0)
+        ChevronFill: =RGBA(0, 18, 107, 1)
+        ChevronHoverBackground: =RGBA(116, 116, 116, 1)
+        ChevronHoverFill: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(0, 18, 107, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Height: =70
+        HoverColor: =RGBA(0, 18, 107, 1)
+        HoverFill: =RGBA(153, 207, 236, 1)
+        Items: =Sequence( 10, 0, 1 )
+        PressedColor: =RGBA(0, 18, 107, 1)
+        PressedFill: =RGBA(153, 207, 236, 1)
+        SelectionColor: =RGBA(0, 18, 107, 1)
+        SelectionFill: =RGBA(153, 207, 236, 1)
+        Size: =21
+        Width: =278
+        X: =331
+        Y: =435
+        ZIndex: =7
+
+    "'Comments_Input (Fill Visit Info)' As text":
+        Color: =RGBA(0, 18, 107, 1)
+        Default: =""
+        Height: =197
+        Size: =21
+        Width: =583
+        X: =26
+        Y: =605
+        ZIndex: =8
+
+    "'Person (Fill Visit Info)' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        Height: =70
+        Size: =21
+        Text: ="Person"
+        Width: =165
+        X: =26
+        Y: =196
+        ZIndex: =9
+
+    "'Family (Fill Visit Info)' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        Height: =70
+        Size: =21
+        Text: ="Family"
+        Width: =165
+        X: =331
+        Y: =196
+        ZIndex: =10
+
+    "'Children (Fill Visit Info)' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        Height: =70
+        Size: =21
+        Text: ="Children"
+        Width: =165
+        X: =26
+        Y: =365
+        ZIndex: =11
+
+    "'Pets (Fill Visit Info)' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        Height: =70
+        Size: =21
+        Text: ="Pets"
+        Width: =165
+        X: =331
+        Y: =365
+        ZIndex: =12
+
+    "'Comments (Fill Visit Info)' As label":
+        Color: =RGBA(0, 18, 107, 1)
+        Height: =70
+        Size: =21
+        Text: ="Comments"
+        Width: =165
+        X: =26
+        Y: =535
+        ZIndex: =14
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        HtmlText2_29 As htmlViewer:
+            Height: =89
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:280px;height:70px; border-radius: 40px; background-color:rgba(0, 18, 107, 1); box-shadow: 0px 0px 0px 0px rgba(0, 18, 107, 0.5), inset 0px 20px 28px 0px rgba(0, 18, 107, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =294
+            X: =323
+            Y: =868
+            ZIndex: =1
+
+        "'Submit_Visit_btn (Fill Visit Info)' As button":
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            Fill: =Color.Transparent
+            Height: =70
+            HoverBorderColor: =
+            HoverFill: =RGBA(0, 18, 107, 1)
+            OnSelect: |-
+                =Set(invalidSelection, false);
+                Set(invalidSelection, 'Person_Dropdown (Fill Visit Info)'.Selected.Value = 0 && 'Family_Dropdown (Fill Visit Info)'.Selected.Value = 0 && 'Children_Dropdown (Fill Visit Info)'.Selected.Value = 0 && 'Pets_Dropdown (Fill Visit Info)'.Selected.Value = 0);
+                
+                // If the selection is invalid, notify the user of the error,
+                // else submit the outgoing record and the visit record to the database
+                If(
+                    invalidSelection,
+                    Notify("Error", NotificationType.Error),
+                
+                    // Set the collection ID that will be used
+                    Set(collectionID, 0);
+                    Set(maxCollectionID, Max(OutgoingRecords, CollectionID));
+                    Set(collectionID, maxCollectionID + 1);
+                
+                    // Add the records to the Outgoing Records table
+                    ForAll(
+                        colBasket As basketItem, 
+                        Patch(
+                            OutgoingRecords,
+                            Defaults(OutgoingRecords), 
+                            {
+                                FoodbankKey_: LookUp(Foodbanks, FoodbankPK = SelectedFoodbank),
+                                VisitorKey: LookUp(Visitors, VisitorPK = 'Visitor_Gallery (Submit Outgoing Transaction)'.Selected.VisitorPK),
+                                CollectionID: collectionID,
+                                ItemKey: LookUp(Stock, ItemPK = basketItem.ID),
+                                Quantity: basketItem.Quantity,
+                                DateTime: Now()
+                            }
+                        )
+                    );
+                
+                    // Change the quantity in the stock by subtracting the basket contents
+                    ForAll(
+                        colBasket As basketItem, 
+                        Patch(
+                            Stock,
+                            LookUp(Stock, ItemPK = basketItem.ID), 
+                            {
+                                Quantity: LookUp(Stock, ItemPK = basketItem.ID).Quantity - basketItem.Quantity
+                            }
+                        )
+                    );
+                
+                    // Add the records to the visits table
+                    Patch(
+                        Visits,
+                        Defaults(Visits), 
+                        { 
+                            FoodbankKey: LookUp(Foodbanks, FoodbankPK = SelectedFoodbank),
+                            DateTime: Now(),
+                            Person: 'Person_Dropdown (Fill Visit Info)'.Selected.Value,
+                            Family: 'Family_Dropdown (Fill Visit Info)'.Selected.Value,
+                            Children: 'Children_Dropdown (Fill Visit Info)'.Selected.Value,
+                            Pets: 'Pets_Dropdown (Fill Visit Info)'.Selected.Value,
+                            Comments: 'Comments_Input (Fill Visit Info)'.Text,
+                            VisitorKey: LookUp(Visitors, VisitorPK = 'Visitor_Gallery (Submit Outgoing Transaction)'.Selected.VisitorPK)
+                        }
+                    );
+                
+                    // Reset basket and navigate back to the home page
+                    Clear(colBasket);
+                    Notify("Outgoing transaction and visit successfully recorded.", NotificationType.Success);
+                    Navigate('Basket Page')
+                );
+            PressedBorderColor: =RGBA(0, 18, 107, 1)
+            PressedColor: =RGBA(0, 18, 107, 1)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =24
+            Text: ="Submit Visit"
+            Width: =280
+            X: =329
+            Y: =873
+            ZIndex: =13
+
+    Group12_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =21
+
+        HtmlText2_28 As htmlViewer:
+            Height: =89
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:280px;height:70px; border-radius: 40px; background-color:rgba(149, 149, 149, 1); box-shadow: 0px 0px 0px 0px rgba(149, 149, 149, 0.5), inset 0px 20px 28px 0px rgba(149, 149, 149, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =285
+            X: =26
+            Y: =868
+            ZIndex: =15
+
+        "'Cancel_btn (Basket)_1' As button":
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            HoverFill: =ColorFade(RGBA(116, 116, 116, 1), -20%)
+            OnSelect: =Back()
+            PressedBorderColor: =RGBA(219, 219, 219, 1)
+            PressedColor: =RGBA(219, 219, 219, 1)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =24
+            Text: ="Cancel"
+            Width: =280
+            X: =31
+            Y: =873
+            ZIndex: =16
+

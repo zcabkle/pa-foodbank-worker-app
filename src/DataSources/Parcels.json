@@ -1,0 +1,104 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr967_parcels",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr967_parcel",
+    "MaxGetRowsCount": 500,
+    "Name": "Parcels",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr967_description": "Description",
+      "cr967_FoodbankKey": "FoodbankKey",
+      "cr967_image": "Image",
+      "cr967_imageid": "cr967_ImageId",
+      "cr967_name": "Name",
+      "cr967_parcel_AsyncOperations": "System Jobs",
+      "cr967_parcel_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr967_parcel_DuplicateBaseRecord": "Duplicate Records (cr967_parcel_DuplicateBaseRecord)",
+      "cr967_parcel_DuplicateMatchingRecord": "Duplicate Records (cr967_parcel_DuplicateMatchingRecord)",
+      "cr967_parcel_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr967_parcel_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr967_parcel_ProcessSession": "Process Sessions",
+      "cr967_parcel_SyncErrors": "Sync Errors",
+      "cr967_parcelid": "Parcel",
+      "cr967_parcelpk": "ParcelPK",
+      "cr967_shareparcelwith": "ShareParcelWith",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Parcels",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Parcels (Views)",
+    "Name": "_cr967_parcel_views",
+    "RelatedEntityName": "Parcels",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "11630b0f-1ffd-415f-8e11-34a013a459b1": "Parcel Associated View",
+      "63963a22-694e-4839-a19b-9fc8ab864fec": "Parcel Advanced Find View",
+      "87c87835-1a2b-4a7d-8878-706b2f983406": "Active Parcels",
+      "9d94b493-1b74-ed11-81aa-000d3a4ae085": "Default View",
+      "b43e4812-c241-490b-95a2-02a2731a547b": "Parcel Lookup View",
+      "fd3911a2-20d4-4c48-afe2-090f834297b5": "Inactive Parcels"
+    }
+  },
+  {
+    "DisplayName": "Status (Parcels)",
+    "Name": "cr967_parcel_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Parcels"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Parcels",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Parcels)",
+    "Name": "cr967_parcel_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Parcels"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Parcels",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,233 @@
+"'Submit Incoming Transaction Page' As screen":
+
+    "'Topbar (Submit Incoming Transaction)' As 'Topbar Cmpnt'":
+        ZIndex: =3
+
+    "'Supplier_Gallery (Submit Incoming Transaction)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =803
+        Items: =Suppliers
+        Layout: =Layout.Vertical
+        TemplateFill: |+
+            =
+            
+        TemplatePadding: =10
+        TemplateSize: =260
+        Visible: =Not(Label20.Visible)
+        Y: =233
+        ZIndex: =5
+
+        HtmlText2_5 As htmlViewer:
+            Height: =260
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:0px; width:604px;height:250px; border-radius: 20px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset -4px -4px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =620
+            ZIndex: =1
+
+        Subtitle3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Forename
+            VerticalAlign: =VerticalAlign.Top
+            Width: =
+            X: =
+            Y: =
+            ZIndex: =2
+
+        Label12 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Forename & " " & ThisItem.Surname
+            Width: =581
+            X: =19
+            ZIndex: =3
+
+        Label13 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Address
+            Width: =567
+            X: =19
+            Y: =60
+            ZIndex: =4
+
+        Label14 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Email
+            Width: =567
+            X: =19
+            Y: =116
+            ZIndex: =5
+
+        Button5 As button:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =46
+            OnSelect: |-
+                =Select(Parent);
+                Set(collectionID, 0);
+                Set(maxCollectionID, Max(IncomingRecords, CollectionID));
+                Set(collectionID, maxCollectionID + 1);
+                
+                ForAll(
+                    colBasket As basketItem, 
+                    Patch(
+                        IncomingRecords,
+                        Defaults(IncomingRecords), 
+                        {
+                            FoodbankKey_: LookUp(Foodbanks, FoodbankPK = SelectedFoodbank),
+                            SupplierKey: LookUp(Suppliers, SupplierPK = 'Supplier_Gallery (Submit Incoming Transaction)'.Selected.SupplierPK),
+                            CollectionID: collectionID,
+                            ItemKey: LookUp(Stock, ItemPK = basketItem.ID),
+                            Quantity: basketItem.Quantity,
+                            DateTime: Now()
+                        }
+                    )
+                );
+                
+                ForAll(
+                    colBasket As basketItem, 
+                    Patch(
+                        Stock,
+                        LookUp(Stock, ItemPK = basketItem.ID), 
+                        {
+                            Quantity: LookUp(Stock, ItemPK = basketItem.ID).Quantity + basketItem.Quantity
+                        }
+                    )
+                );
+                
+                Clear(colBasket);
+                Notify("Incoming transaction successfully recorded.", NotificationType.Success);
+                Navigate('Basket Page');
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Use This Supplier"
+            Width: =212
+            X: =374
+            Y: =186
+            ZIndex: =6
+
+        Label16 As label:
+            Color: =RGBA(0, 18, 107, 1)
+            Height: =70
+            OnSelect: =
+            Size: =21
+            Text: =ThisItem.'Phone Number'
+            Width: =392
+            X: =19
+            Y: =174
+            ZIndex: =7
+
+    "'Appbar (Submit Incoming Transaction)' As 'Appbar Cmpnt'":
+        Y: =1036
+        ZIndex: =6
+
+    "'Filter_btn Cmpnt_7' As 'Filter_btn Cmpnt'":
+        X: =535
+        Y: =67
+        ZIndex: =7
+
+    Label20 As label:
+        Height: =58
+        Size: =21
+        Text: ="No results found."
+        Visible: |
+            =IsEmpty('Supplier_Gallery (Submit Incoming Transaction)'.AllItems)
+        Width: =255
+        X: =192
+        Y: =574
+        ZIndex: =8
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        HtmlText2_18 As htmlViewer:
+            Height: =89
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:604px;height:70px; border-radius: 40px; background-color:rgba(0, 134, 208, 1); box-shadow: 0px 0px 0px 0px rgba(0, 134, 208, 0.5), inset 0px 20px 28px 0px rgba(0, 134, 208, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =622
+            X: =8
+            Y: =152
+            ZIndex: =2
+
+        "'Add_Parcel_btn (Parcels)_1' As button":
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            HoverFill: =ColorFade(RGBA(0, 134, 208, 1), -20%)
+            OnSelect: =Navigate('Add Supplier Page')
+            PressedBorderColor: =RGBA(0, 134, 208, 1)
+            PressedColor: =RGBA(0, 134, 208, 1)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =24
+            Text: ="Add New Supplier"
+            Width: =604
+            X: =14
+            Y: =157
+            ZIndex: =9
+
+    Group8 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        HtmlText2_19 As htmlViewer:
+            Height: =85
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:5px; width:514px;height:70px; border-radius: 40px; background-color:rgba(255, 255, 255, 1); box-shadow: 0px 5px 5px 0px rgba(210, 210, 210, 0.5), inset 0px 0px 16px 0px rgba(210, 210, 210, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =529
+            X: =18
+            Y: =70
+            ZIndex: =1
+
+        "'Search (Submit Incoming Transaction)' As text":
+            Color: =RGBA(116, 116, 116, 1)
+            Default: =""
+            Fill: =Color.Transparent
+            Height: =70
+            HintText: ="Search for a supplier"
+            HoverFill: =RGBA(215, 215, 215, 0.8)
+            PaddingLeft: =10
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =21
+            Width: =514
+            X: =21
+            Y: =75
+            ZIndex: =4
+
