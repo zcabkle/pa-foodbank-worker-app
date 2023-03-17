@@ -77,10 +77,7 @@ Therefore when deploying in PowerApps, assuming users are already part of the cu
 
 ## Useful Documentation & Resources
 
-[How to add users to a PowerApps Environment](https://learn.microsoft.com/en-us/power-platform/admin/add-users-to-environment)
-(Not covered in this guide)<br>
+[How to add users to a PowerApps Environment](https://learn.microsoft.com/en-us/power-platform/admin/add-users-to-environment)<br>
+[How to configure security roles](https://learn.microsoft.com/en-us/power-platform/admin/database-security)
 [PowerPlatform Admin Documentation](https://learn.microsoft.com/en-us/power-platform/admin/)<br>
 [PowerApps Learn](https://learn.microsoft.com/en-us/training/powerplatform/power-apps)<br>
-
-
-
