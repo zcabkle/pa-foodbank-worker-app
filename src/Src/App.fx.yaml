@@ -180,5 +180,6 @@ App As appinfo:
                 Quantity: Blank()
             }
         );
+        Clear(colBasket);
     StartScreen: ='Select Foodbank Page'
 
