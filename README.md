@@ -40,6 +40,12 @@ Password: <br>
 
 ## Running Locally
 
+### Side Notes
+
+Both the 'Foodbank Worker Portal' and the 'Admin Portal' parts of the project are under the same solution. By setting up the .zip file for running locally, you will set up both portals in one set of steps!
+
+### Steps to Run Locally
+
 1. If you don't already have a Microsoft Developer account, create one here https://developer.microsoft.com/en-us/microsoft-365/dev-program .<br>
 2. Download the .zip file via the "Exported Solution inc. Foodbank Worker Portal on PowerApps and Admin Portal on PowerApps" link in the "Important Deliverables" section.
 3. Login to PowerApps, on the top-right corner you should be in the environment that has your name, if not click the current environment to change environment to the one with your name (you want to be in this environment as it is a developer environment).![image](https://user-images.githubusercontent.com/73954803/225882057-d8f40081-07d9-4f8a-90c5-b6c76da6fdfd.png)
@@ -57,15 +63,24 @@ Click the three dots next the any object and click edit to edit them. This is ho
 ### Side Notes
 Each time you publish changes to an application on an environment, the changes are accessible to anyone who has been added as a 'User' to the app on that same environment.<br>
 
-Therefore when deploying in PowerApps, assuming users are already part of the current environment, you need to add the user to the app as a 'User' and make sure they have the correct permissions/security role to use the app. An example of an important permission to have is read access to the Dataverse, if users don't have this then they wont be able to view any of the data displayed in the app.
+Therefore when deploying in PowerApps, assuming users are already part of the current environment, you just need to add the user to the app as a 'User' and make sure they have the correct permissions/security role to use the app. An example of an important permission to have is read access to the Dataverse, if users don't have this then they wont be able to view any of the data displayed in the app!
 
 ### Steps for Deployment
+
+**Follow all of the the steps to run locally before trying to deploy**
+
 1. To add a user in the current environment to the app, click the three dot icon and click 'Share'.
 2. Find a user with the search bar and assign them an appropriate security role. Fill in the email message if you would like.
 ![Screenshot 2023-03-17 at 10 59 03](https://user-images.githubusercontent.com/73954803/225886616-e1d27b60-e70b-4404-8311-eac6f74962e7.png)
 3. The user will recieve an email with a link to the app. They will also be able to see and access the app whenever they access PowerApps.
 4. You can find the access link to the app under 'Details' and 'Web Link' if you ever need to resend a link to a user already added to the app.
 
+## Useful Documentation & Resources
+
+[How to add users to a PowerApps Environment](https://learn.microsoft.com/en-us/power-platform/admin/add-users-to-environment)
+(Not covered in this guide)<br>
+[PowerPlatform Admin Documentation](https://learn.microsoft.com/en-us/power-platform/admin/)<br>
+[PowerApps Learn](https://learn.microsoft.com/en-us/training/powerplatform/power-apps)<br>
 
 
 
