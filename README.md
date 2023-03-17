@@ -82,19 +82,25 @@ Therefore when deploying in PowerApps, assuming users are already part of the cu
 
 ### Side Notes
 
-Testing is done with the [PowerApps Test Studio](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/test-studio) which supports testing on canvas apps.
+Testing is done with the [PowerApps Test Studio](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/test-studio) which only supports testing on canvas apps.
 
-The testing configuration is given in the 'Important Deliverables' section.
+**Currently, Microsoft documentation doesn't explain how to upload a downloaded test suite in order to run the tests though I have included this testing configuration in the 'Important Deliverables' section for if they implement this in the future.**
 
 ### Running the Test Studio
+
+*Until Microsoft implement a feature for uploading a test suite this is a temporary way to get around it. I recommend writing your own tests from scratch or skipping this step entirely.
 
 Prerequisites - 
   Download the 'TestStudio Configuration for Foodbank Worker Portal' given in the 'Important Deliverables' section
   Follow the steps to set up the project to run locally.
-  Testing in a separate environment to the one you develop in is highly recommended. Learn how to create a new environment here.
+  Testing in a separate environment to the one you develop in is highly recommended. Learn how to create a new environment [here](https://learn.microsoft.com/en-us/power-platform/admin/create-environment)
   
-1. Go into your solution, click the three button
-
+1. Go into your solution, click the three button icon and click edit.<br>
+2. Navigate to the Test Studio via this menu.<br>
+<img width="1440" alt="Screenshot 2023-03-17 at 15 17 54" src="https://user-images.githubusercontent.com/73954803/225946716-e6cd04ef-589d-47de-a788-9bf67e7df37f.png">
+3. Open the TestStudio configuration in an IDE such as VSCode.<br>
+4. The configuration shows the steps that I used in each test case.<br>
+5. For each test case in the configuration, create one on Test Studio and fill in the test steps with the content provided in the configuration file.<br>
 
 ## Useful Documentation & Resources
 
