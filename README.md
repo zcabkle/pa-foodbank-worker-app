@@ -16,7 +16,7 @@ Here are all deliverables that I have created as part of this project.<br>
 [Repo for Foodbank Worker Portal on PowerApps](https://github.com/zcabkle/pa-foodbank-worker-app)<br>
 
 [Exported Solution inc. Foodbank Worker Portal on PowerApps and Admin Portal on PowerApps](https://github.com/zcabkle/pa-foodbank-worker-app/files/10996387/FoodbankSolution_1_0_0_10_managed.zip)<br>
-[TestStudio Configuration for Foodbank Worker Portal]()<br>
+[TestStudio Configuration for Foodbank Worker Portal](https://github.com/zcabkle/pa-foodbank-worker-app/files/11002112/Automated.Integration.Tests.fx.yaml.zip)<br>
 
 [Video Overview of the Project](https://www.youtube.com)<br>
 [Blog Submission]()<br>
@@ -80,9 +80,21 @@ Therefore when deploying in PowerApps, assuming users are already part of the cu
 
 ## Testing
 
+### Side Notes
+
 Testing is done with the [PowerApps Test Studio](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/test-studio) which supports testing on canvas apps.
 
 The testing configuration is given in the 'Important Deliverables' section.
+
+### Running the Test Studio
+
+Prerequisites - 
+  Download the 'TestStudio Configuration for Foodbank Worker Portal' given in the 'Important Deliverables' section
+  Follow the steps to set up the project to run locally.
+  Testing in a separate environment to the one you develop in is highly recommended. Learn how to create a new environment here.
+  
+1. Go into your solution, click the three button
+
 
 ## Useful Documentation & Resources
 
