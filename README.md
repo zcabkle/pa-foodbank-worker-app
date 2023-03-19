@@ -23,6 +23,8 @@ Here are all deliverables that I have created as part of this project.<br>
 
 ## The Foodbank Worker Portal is currently being hosted.
 
+At the time of marking, at least one of the accounts below will work thou
+
 1. Access the Foodbank Worker App app via [this access link](https://apps.powerapps.com/play/e/68a17071-5a2a-ea91-a8aa-04cacc480e4e/a/4f0c6aef-95ca-48b9-bf7e-f89cbdc97642?tenantId=f932d2dd-377d-4e9b-bc73-5f0efe92533f) on a laptop or (preferably) on a mobile device with the PowerApps app installed.<br>
 
 2. The PowerApps app can be found on [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.msapps&hl=en&gl=US) or on the [App Store](https://www.google.com/search?client=safari&rls=en&q=powerapps+app&ie=UTF-8&oe=UTF-8). If the app is installed on your device, when you click the access link you will be asked whether you would like to launch on the PowerApps app, you should click yes.
