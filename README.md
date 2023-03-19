@@ -28,7 +28,13 @@ Access the Foodbank Worker App app via [this access link](https://apps.powerapps
 The PowerApps app can be found on [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.msapps&hl=en&gl=US) or on the [App Store](https://www.google.com/search?client=safari&rls=en&q=powerapps+app&ie=UTF-8&oe=UTF-8). If the app is installed on your device, when you click the access link you will be asked whether you would like to launch on the PowerApps app, you should click yes.
 
 Use these credentials to login - <br>
-Username: <br>
+Username: AlexW@7nqjjm.onmicrosoft.com
+Password: <br>
+
+Or
+
+Use these credentials to login - <br>
+Username: AdeleV@7nqjjm.onmicrosoft.com
 Password: <br>
 
 You should now have access to the Foodbank Worker App on your device.
@@ -38,7 +44,7 @@ You should now have access to the Foodbank Worker App on your device.
 Access the Admin Portal via [this access link](https://org6e7090ee.crm4.dynamics.com/main.aspx?appid=2abc3669-bb8b-4a97-a113-3f7e30a70cf9) on a web browser on a laptop.
 
 Use these credentials to login - <br>
-Username: <br>
+Username: LeeG@7nqjjm.onmicrosoft.com
 Password: <br>
 
 ## Running Locally
