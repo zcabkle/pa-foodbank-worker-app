@@ -23,10 +23,11 @@ Here are all deliverables that I have created as part of this project.<br>
 
 ## The Foodbank Worker Portal is currently being hosted.
 
-Access the Foodbank Worker App app via [this access link](https://apps.powerapps.com/play/e/68a17071-5a2a-ea91-a8aa-04cacc480e4e/a/4f0c6aef-95ca-48b9-bf7e-f89cbdc97642?tenantId=f932d2dd-377d-4e9b-bc73-5f0efe92533f) on a laptop or (preferably) on a mobile device with the PowerApps app installed.<br>
+1. Access the Foodbank Worker App app via [this access link](https://apps.powerapps.com/play/e/68a17071-5a2a-ea91-a8aa-04cacc480e4e/a/4f0c6aef-95ca-48b9-bf7e-f89cbdc97642?tenantId=f932d2dd-377d-4e9b-bc73-5f0efe92533f) on a laptop or (preferably) on a mobile device with the PowerApps app installed.<br>
 
-The PowerApps app can be found on [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.msapps&hl=en&gl=US) or on the [App Store](https://www.google.com/search?client=safari&rls=en&q=powerapps+app&ie=UTF-8&oe=UTF-8). If the app is installed on your device, when you click the access link you will be asked whether you would like to launch on the PowerApps app, you should click yes.
+2. The PowerApps app can be found on [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.msapps&hl=en&gl=US) or on the [App Store](https://www.google.com/search?client=safari&rls=en&q=powerapps+app&ie=UTF-8&oe=UTF-8). If the app is installed on your device, when you click the access link you will be asked whether you would like to launch on the PowerApps app, you should click yes.
 
+3. 
 Use these credentials to login - <br>
 Username: AlexW@7nqjjm.onmicrosoft.com
 Password: <br>
@@ -37,8 +38,13 @@ Use these credentials to login - <br>
 Username: AdeleV@7nqjjm.onmicrosoft.com
 Password: <br>
 
-**You may be asked to enter use an authenticator code, refreshing the age removes this prompt.**<br>
-**You may be asked to extend your PowerApps plan, please select yes if this prompt appears.**
+(Alex has access to 3/3 foodbanks, Adele only has access to 2/3 foodbanks).
+
+5. **You may be asked to enter use an authenticator code, refreshing the age removes this prompt.**<br>
+6. **You may be asked to extend your PowerApps plan, please select yes if this prompt appears, fill out the other information apart from the phone number.**
+7. **You may be required to allow perimission for the connectors. Allow permission for the connectors on this screen**<br>
+<img width="512" alt="image" src="https://user-images.githubusercontent.com/73954803/226182879-1ce184b0-73a2-4ff6-9205-c16c2adf6c26.png">
+
 
 You should now have access to the Foodbank Worker App on your device.
 
