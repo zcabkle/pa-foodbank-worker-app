@@ -38,12 +38,6 @@ Use these credentials to login - <br>
 Username: AdeleV@7nqjjm.onmicrosoft.com
 Password: <br>
 
-or 
-
-**Use these credentials to login - <br>
-Username: XYZ@nqjjm.onmicrosoft.com
-Password: <br>**
-
 **(Alex has access to 3/3 foodbanks, Adele only has access to 2/3 foodbanks).**
 
 5. **You may be asked to enter use an authenticator code, refreshing the age removes this prompt.**<br>
