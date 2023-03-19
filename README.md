@@ -42,18 +42,21 @@ Password: <br>
 
 5. **You may be asked to enter use an authenticator code, refreshing the age removes this prompt.**<br>
 6. **You may be asked to extend your PowerApps plan, please select yes if this prompt appears, fill out the other information apart from the phone number.**
-7. **You may be required to allow perimission for the connectors. Allow permission for the connectors on this screen**<br>
+7. **You may be required to allow permission for the connectors. Allow permission for the connectors on this screen**<br>
 <img width="512" alt="image" src="https://user-images.githubusercontent.com/73954803/226182879-1ce184b0-73a2-4ff6-9205-c16c2adf6c26.png">
 
 You should now have access to the Foodbank Worker App on your device.
 
 ## The Admin Portal is currently being hosted.
 
-Access the Admin Portal via [this access link](https://org6e7090ee.crm4.dynamics.com/main.aspx?appid=2abc3669-bb8b-4a97-a113-3f7e30a70cf9) on a web browser on a laptop.
+1. Access the Admin Portal via [this access link](https://org6e7090ee.crm4.dynamics.com/main.aspx?appid=2abc3669-bb8b-4a97-a113-3f7e30a70cf9) on a web browser on a laptop.
 
-Use these credentials to login - <br>
+2. Use these credentials to login - <br>
 Username: LeeG@7nqjjm.onmicrosoft.com
 Password: <br>
+
+3. **You may be asked to enter use an authenticator code, refreshing the age removes this prompt.**<br>
+4. **You may be asked to extend your PowerApps plan, please select yes if this prompt appears, fill out the other information apart from the phone number.**
 
 ## Running Locally
 
