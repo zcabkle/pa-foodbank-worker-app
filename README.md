@@ -31,13 +31,13 @@ At the time of marking, at least one of the accounts below will work thou
 
 3. 
 Use these credentials to login - <br>
-Username: AlexW@7nqjjm.onmicrosoft.com
+Username: AlexW@7nqjjm.onmicrosoft.com <br>
 Password: <br>
 
 Or
 
 Use these credentials to login - <br>
-Username: AdeleV@7nqjjm.onmicrosoft.com
+Username: AdeleV@7nqjjm.onmicrosoft.com <br>
 Password: <br>
 
 **(Alex has access to 3/3 foodbanks, Adele only has access to 2/3 foodbanks).**
@@ -54,7 +54,7 @@ You should now have access to the Foodbank Worker App on your device.
 1. Access the Admin Portal via [this access link](https://org6e7090ee.crm4.dynamics.com/main.aspx?appid=2abc3669-bb8b-4a97-a113-3f7e30a70cf9) on a web browser on a laptop.
 
 2. Use these credentials to login - <br>
-Username: LeeG@7nqjjm.onmicrosoft.com
+Username: LeeG@7nqjjm.onmicrosoft.com <br>
 Password: <br>
 
 3. **You may be asked to enter use an authenticator code, refreshing the age removes this prompt.**<br>
