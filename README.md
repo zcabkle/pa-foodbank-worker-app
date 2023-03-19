@@ -44,13 +44,12 @@ or
 Username: XYZ@nqjjm.onmicrosoft.com
 Password: <br>**
 
-**(Alex has access to 3/3 foodbanks, Adele only has access to 2/3 foodbanks, XYZ has access to 3/3 foodbanks).**
+**(Alex has access to 3/3 foodbanks, Adele only has access to 2/3 foodbanks).**
 
 5. **You may be asked to enter use an authenticator code, refreshing the age removes this prompt.**<br>
 6. **You may be asked to extend your PowerApps plan, please select yes if this prompt appears, fill out the other information apart from the phone number.**
 7. **You may be required to allow perimission for the connectors. Allow permission for the connectors on this screen**<br>
 <img width="512" alt="image" src="https://user-images.githubusercontent.com/73954803/226182879-1ce184b0-73a2-4ff6-9205-c16c2adf6c26.png">
-
 
 You should now have access to the Foodbank Worker App on your device.
 
