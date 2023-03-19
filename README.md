@@ -37,8 +37,8 @@ Use these credentials to login - <br>
 Username: AdeleV@7nqjjm.onmicrosoft.com
 Password: <br>
 
-* You may be asked to enter use an authenticator code, refreshing the age removes this prompt.
-* You may be asked to extend your PowerApps plan, please select yes if this prompt appears.
+**You may be asked to enter use an authenticator code, refreshing the age removes this prompt.**<br>
+**You may be asked to extend your PowerApps plan, please select yes if this prompt appears.**
 
 You should now have access to the Foodbank Worker App on your device.
 
