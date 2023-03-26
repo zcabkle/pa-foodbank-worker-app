@@ -123,6 +123,7 @@
       "team_msdyn_dataflowrefreshhistory": "DataflowRefreshHistories",
       "team_msdyn_entitylinkchatconfiguration": "Entity link chat configurations",
       "team_msdyn_entityrefreshhistory": "EntityRefreshHistories",
+      "team_msdyn_favoriteknowledgearticle": "Favorite knowledge articles",
       "team_msdyn_federatedarticle": "Knowledge Federated Articles",
       "team_msdyn_integratedsearchprovider": "Integrated search providers",
       "team_msdyn_kalanguagesetting": "Knowledge article language settings",
