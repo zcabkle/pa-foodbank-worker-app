@@ -54,6 +54,7 @@
                 ZIndex: =2
 
             AddPicture2 As addMedia:
+                AccessibleLabel: ="Picture"
                 Height: =225
                 Width: =(Parent.Width - 60) * 0.6
                 X: =146
@@ -115,6 +116,7 @@
                 ZIndex: =1
 
             DataCardValue5 As text:
+                AccessibleLabel: ="Description"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -187,6 +189,7 @@
                 ZIndex: =1
 
             DataCardValue58 As combobox:
+                AccessibleLabel: ="StockLevel"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -259,6 +262,7 @@
                 ZIndex: =1
 
             DataCardValue54 As combobox:
+                AccessibleLabel: ="ItemCategory"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -331,6 +335,7 @@
                 ZIndex: =1
 
             DataCardValue55 As combobox:
+                AccessibleLabel: ="ShareItemWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -403,6 +408,7 @@
                 ZIndex: =1
 
             DataCardValue56 As combobox:
+                AccessibleLabel: ="ShareQuantityWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -475,6 +481,7 @@
                 ZIndex: =1
 
             DataCardValue57 As combobox:
+                AccessibleLabel: ="ShareStockLevelWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -620,6 +627,7 @@
                 ZIndex: =1
 
             DataCardValue51 As text:
+                AccessibleLabel: ="Name"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -692,6 +700,7 @@
                 ZIndex: =1
 
             DataCardValue53 As text:
+                AccessibleLabel: ="Quantity"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -738,6 +747,7 @@
                 ZIndex: =4
 
     "'Complete_Icon (Add Item)' As icon.Check":
+        AccessibleLabel: ="Tick"
         Color: =RGBA(255, 255, 255, 1)
         Height: =45
         Icon: =Icon.Check
@@ -801,6 +811,7 @@
         ZIndex: =5
 
     "'Cancel_Icon (Add Item)' As icon.Cancel":
+        AccessibleLabel: ="Cancel"
         Color: =RGBA(255, 255, 255, 1)
         Height: =45
         Icon: =Icon.Cancel

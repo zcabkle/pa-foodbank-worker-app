@@ -8,6 +8,7 @@
         ZIndex: =4
 
     "'Basket_Gallery (Basket)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Basket Items"
         Height: =714
         Items: =colBasket
         Layout: =Layout.Vertical
@@ -60,6 +61,7 @@
             ZIndex: =5
 
         Icon12 As icon.Trash:
+            AccessibleLabel: ="Icon"
             Icon: =Icon.Trash
             OnSelect: =Remove(colBasket, ThisItem)
             TabIndex: =0
@@ -80,6 +82,7 @@
             ZIndex: =7
 
         Dropdown3 As dropdown:
+            AccessibleLabel: ="Dropdown"
             BorderThickness: =1.5
             ChevronBackground: =RGBA(219, 219, 219, 1)
             ChevronDisabledBackground: =RGBA(0, 0, 0, 0)
@@ -110,6 +113,7 @@
             ZIndex: =8
 
         Icon13 As icon.Trash:
+            AccessibleLabel: ="Icon"
             Height: =51
             Icon: =Icon.Trash
             OnSelect: |-
@@ -122,6 +126,7 @@
             ZIndex: =9
 
     "'Type_of_transaction_Radio (Basket)' As radio":
+        AccessibleLabel: ="In or Out"
         Default: ="Incoming Transaction"
         Height: =82
         Items: =["In", "Out"]
@@ -155,6 +160,7 @@
         ZIndex: =8
 
     Icon2 As icon.Add:
+        AccessibleLabel: ="Add"
         Color: =RGBA(0, 134, 208, 1)
         Icon: =Icon.Add
         OnSelect: |-
@@ -226,6 +232,7 @@
         ZIndex: =11
 
     ComboBox1 As combobox:
+        AccessibleLabel: ="Search"
         ChevronBackground: =RGBA(219, 219, 219, 1)
         ChevronFill: =RGBA(0, 18, 107, 1)
         DisplayFields: =["cr967_name"]
