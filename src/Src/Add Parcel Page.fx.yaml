@@ -16,6 +16,7 @@
         ZIndex: =3
 
     "'Complete_Icon (Add Parcel)' As icon.Check":
+        AccessibleLabel: ="Tick"
         Height: =45
         Icon: =Icon.Check
         OnSelect: =If(SubmitForm(AddParcelForm), SubmitForm(AddParcelForm); Back(); ResetForm(AddParcelForm), 0)
@@ -25,6 +26,7 @@
         ZIndex: =4
 
     "'Cancel_Icon (Add Parcel)' As icon.Cancel":
+        AccessibleLabel: ="Cancel"
         Height: =45
         Icon: =Icon.Cancel
         OnSelect: =Back(); ResetForm(AddParcelForm);
@@ -70,6 +72,7 @@
                 ZIndex: =2
 
             AddPicture3 As addMedia:
+                AccessibleLabel: ="Picture"
                 Height: =225
                 Width: =(Parent.Width - 60) * 0.6
                 X: =146
@@ -130,6 +133,7 @@
                 ZIndex: =1
 
             DataCardValue27 As text:
+                AccessibleLabel: ="Description"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -202,6 +206,7 @@
                 ZIndex: =1
 
             DataCardValue70 As combobox:
+                AccessibleLabel: ="ShareParcelWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -275,6 +280,7 @@
                 ZIndex: =1
 
             DataCardValue11 As combobox:
+                AccessibleLabel: ="Label"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["cr967_foodbankpk"]
@@ -347,6 +353,7 @@
                 ZIndex: =1
 
             DataCardValue68 As text:
+                AccessibleLabel: ="Name"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true

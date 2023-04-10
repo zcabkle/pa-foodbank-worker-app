@@ -555,6 +555,7 @@
                 ZIndex: =1
 
             DataCardValue8 As combobox:
+                AccessibleLabel: ="Label"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["cr967_foodbankpk"]
