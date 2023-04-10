@@ -18,7 +18,7 @@ Here are all deliverables that I have created as part of this project.<br>
 [Exported Solution inc. Foodbank Worker Portal on PowerApps and Admin Portal on PowerApps](https://github.com/zcabkle/pa-foodbank-worker-app/files/10996387/FoodbankSolution_1_0_0_10_managed.zip)<br>
 [TestStudio Configuration for Foodbank Worker Portal](https://github.com/zcabkle/pa-foodbank-worker-app/files/11002112/Automated.Integration.Tests.fx.yaml.zip)<br>
 
-[Video Overview of the Project](https://www.youtube.com)<br>
+[Video Overview of the Project](https://youtu.be/5YJZpnZifrY)<br>
 [Blog Submission]()<br>
 
 ## The Foodbank Worker Portal is currently being hosted.
