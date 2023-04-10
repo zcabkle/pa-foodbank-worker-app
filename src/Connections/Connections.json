@@ -1,8 +1,5 @@
 {
   "39a63874-7fb7-485f-af12-6b37836a269d": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "OneDrive for Business",
@@ -20,9 +17,6 @@
     "id": "39a63874-7fb7-485f-af12-6b37836a269d"
   },
   "6bcf2eca-9300-4db0-aa37-c5e8855e5463": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Office 365 Outlook",
@@ -40,14 +34,6 @@
     "id": "6bcf2eca-9300-4db0-aa37-c5e8855e5463"
   },
   "e306d400-3ced-400d-8535-ac43777b7443": {
-    "connectionParameters": {
-      "logicAppHostType": "ARM",
-      "workFlowCallbackUri": "https://prod-115.westeurope.logic.azure.com:443/workflows/2e1f540462c94aeebbd77c75d139ca73/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8U8cb_4yG51OdGsUxPFub9DbKfha0f8dPE4tLcZdix4",
-      "workflowEndpoint": "/subscriptions/3a3c8f3a-b051-4389-add3-35f0cadf681c/resourceGroups/f932d2dd377d4e9bbc735f0efe92533f-68a170715a2aea91a8aa04cacc480e4e-env/providers/Microsoft.Logic/workflows/4bd478e6-cf5b-5962-4e44-94aa220f842e",
-      "workflowEntityId": "829bc97f-678f-ed11-aad0-000d3a4ae085",
-      "workflowName": "4bd478e6-cf5b-5962-4e44-94aa220f842e",
-      "workflowPath": "/subscriptions/3a3c8f3a-b051-4389-add3-35f0cadf681c/resourceGroups/f932d2dd377d4e9bbc735f0efe92533f-68a170715a2aea91a8aa04cacc480e4e-env/providers/Microsoft.Logic/workflows/4bd478e6-cf5b-5962-4e44-94aa220f842e"
-    },
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",

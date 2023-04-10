@@ -55,6 +55,7 @@
         ZIndex: =2
 
     Gallery As gallery.galleryHorizontal:
+        AccessibleLabel: ="Nav Bar"
         Height: =100
         Items: =Filter(colAppBar, ParentTab = "") 
         ShowScrollbar: =false
@@ -130,6 +131,7 @@
         ZIndex: =9
 
     TransparentGallery As gallery.galleryHorizontal:
+        AccessibleLabel: ="Nav Bar"
         Height: =100
         Items: |-
             =//colAppBar

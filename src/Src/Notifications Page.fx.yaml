@@ -14,6 +14,7 @@
         ZIndex: =1
 
     "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Notifications"
         Height: =891
         Items: |-
             =Search(
@@ -88,6 +89,7 @@
             ZIndex: =5
 
         Icon1 As icon.Trash:
+            AccessibleLabel: ="Icon"
             Height: =29
             Icon: =Icon.Trash
             OnSelect: =RemoveIf(Notifications, NotificationPK = ThisItem.NotificationPK);
@@ -97,6 +99,7 @@
             ZIndex: =6
 
         Icon3 As icon.Information:
+            AccessibleLabel: ="Icon"
             Height: =47
             Icon: =Icon.Information
             OnSelect: =Select(Parent); Navigate('Notification Foodbank More Information Page');
@@ -132,6 +135,7 @@
         ZIndex: =3
 
     "'Search (Home)_1' As text":
+        AccessibleLabel: ="Search"
         Clear: =true
         Color: =RGBA(0, 18, 107, 1)
         Default: =""

@@ -109,6 +109,7 @@
                 ZIndex: =1
 
             DataCardValue90 As combobox:
+                AccessibleLabel: ="ShareStockLevelWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -295,6 +296,7 @@
                 ZIndex: =1
 
             DataCardValue85 As combobox:
+                AccessibleLabel: ="Item Category"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -367,6 +369,7 @@
                 ZIndex: =1
 
             DataCardValue69 As combobox:
+                AccessibleLabel: ="ShareItemWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -437,6 +440,7 @@
                 ZIndex: =1
 
             DataCardValue86 As combobox:
+                AccessibleLabel: ="ShareItemWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -507,6 +511,7 @@
                 ZIndex: =1
 
             DataCardValue87 As combobox:
+                AccessibleLabel: ="ShareQuantityWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]

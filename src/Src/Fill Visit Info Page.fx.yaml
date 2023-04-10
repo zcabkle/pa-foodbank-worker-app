@@ -14,6 +14,7 @@
         ZIndex: =3
 
     "'Person_Dropdown (Fill Visit Info)' As dropdown":
+        AccessibleLabel: ="Person"
         ChevronBackground: =RGBA(219, 219, 219, 1)
         ChevronDisabledBackground: =RGBA(149, 149, 149, 1)
         ChevronDisabledFill: =RGBA(0, 0, 0, 0)
@@ -40,6 +41,7 @@
         ZIndex: =4
 
     "'Family_Dropdown (Fill Visit Info)' As dropdown":
+        AccessibleLabel: ="Family"
         ChevronBackground: =RGBA(219, 219, 219, 1)
         ChevronFill: =RGBA(0, 18, 107, 1)
         ChevronHoverBackground: =RGBA(116, 116, 116, 1)
@@ -65,6 +67,7 @@
         ZIndex: =5
 
     "'Children_Dropdown (Fill Visit Info)' As dropdown":
+        AccessibleLabel: ="Children"
         ChevronBackground: =RGBA(219, 219, 219, 1)
         ChevronDisabledFill: =RGBA(0, 0, 0, 0)
         ChevronFill: =RGBA(0, 18, 107, 1)
@@ -90,6 +93,7 @@
         ZIndex: =6
 
     "'Pets_Dropdown (Fill Visit Info)' As dropdown":
+        AccessibleLabel: ="Pets"
         ChevronBackground: =RGBA(219, 219, 219, 1)
         ChevronDisabledFill: =RGBA(0, 0, 0, 0)
         ChevronFill: =RGBA(0, 18, 107, 1)
@@ -115,6 +119,7 @@
         ZIndex: =7
 
     "'Comments_Input (Fill Visit Info)' As text":
+        AccessibleLabel: ="Comments"
         Color: =RGBA(0, 18, 107, 1)
         Default: =""
         Height: =197
