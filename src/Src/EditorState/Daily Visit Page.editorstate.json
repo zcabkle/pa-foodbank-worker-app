@@ -233,6 +233,22 @@
           "InvariantPropertyName": "BorderThickness",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "-1",
+          "InvariantPropertyName": "TabIndex",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"\"",
+          "InvariantPropertyName": "AccessibleLabel",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "GalleryTemplateChildName": "galleryTemplate8",
@@ -257,6 +273,11 @@
         {
           "Category": "Data",
           "PropertyName": "WrapCount",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "AccessibleLabel",
           "RuleProviderType": "Unknown"
         },
         {
@@ -372,6 +393,11 @@
         {
           "Category": "Design",
           "PropertyName": "BorderThickness",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "TabIndex",
           "RuleProviderType": "Unknown"
         }
       ],

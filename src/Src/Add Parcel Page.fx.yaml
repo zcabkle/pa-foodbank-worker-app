@@ -20,6 +20,7 @@
         Height: =45
         Icon: =Icon.Check
         OnSelect: =If(SubmitForm(AddParcelForm), SubmitForm(AddParcelForm); Back(); ResetForm(AddParcelForm), 0)
+        TabIndex: =0
         Width: =45
         X: =590
         Y: =68
@@ -30,6 +31,7 @@
         Height: =45
         Icon: =Icon.Cancel
         OnSelect: =Back(); ResetForm(AddParcelForm);
+        TabIndex: =0
         Width: =45
         X: =5
         Y: =68

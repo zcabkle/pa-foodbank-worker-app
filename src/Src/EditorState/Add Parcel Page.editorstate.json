@@ -699,6 +699,14 @@
           "InvariantPropertyName": "AccessibleLabel",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "-1",
+          "InvariantPropertyName": "TabIndex",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -835,6 +843,11 @@
           "RuleProviderType": "Unknown"
         },
         {
+          "Category": "Design",
+          "PropertyName": "TabIndex",
+          "RuleProviderType": "Unknown"
+        },
+        {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
           "RuleProviderType": "Unknown"
@@ -910,6 +923,14 @@
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "\"\"",
           "InvariantPropertyName": "AccessibleLabel",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "-1",
+          "InvariantPropertyName": "TabIndex",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         }
@@ -1045,6 +1066,11 @@
         {
           "Category": "Design",
           "PropertyName": "PressedColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "TabIndex",
           "RuleProviderType": "Unknown"
         },
         {

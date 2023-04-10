@@ -4,9 +4,11 @@
         ZIndex: =2
 
     "'Visitor_Gallery (Submit Outgoing Transaction)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Visitors"
         Height: =822
         Items: =Visitors
         Layout: =Layout.Vertical
+        TabIndex: =0
         TemplateFill: |+
             =
             
@@ -53,7 +55,7 @@
             Height: =70
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.Address
+            Text: =ThisItem.VisitorPK
             Width: =317
             X: =19
             Y: =51
@@ -64,7 +66,7 @@
             Height: =70
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.Email
+            Text: =ThisItem.Forename
             Width: =331
             X: =19
             Y: =98
@@ -184,6 +186,7 @@
             ZIndex: =1
 
         "'Search (Submit Outgoing Transaction)' As text":
+            AccessibleLabel: ="Search"
             Color: =RGBA(116, 116, 116, 1)
             Default: =""
             Fill: =Color.Transparent

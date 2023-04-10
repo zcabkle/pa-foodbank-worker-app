@@ -11,6 +11,7 @@
         ZIndex: =3
 
     "'Other_Foodbank_Parcel_Gallery (Other Foodbank Parcels)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Other Foodbank Parcels"
         Height: =827
         Items: =Search(Filter(Parcels,And(FoodbankKey.FoodbankPK='Other_Foodbanks_Gallery (Other Foodbanks)'.Selected.FoodbankPK,Or(ShareParcelWith=ShareWith.Foodbanks,ShareParcelWith=ShareWith.'Foodbanks & Public'))),'Search (Other Foodbank Parcels)'.Text,"cr967_name")
         Layout: =Layout.Vertical
@@ -143,6 +144,7 @@
             ZIndex: =1
 
         "'Search (Other Foodbank Parcels)' As text":
+            AccessibleLabel: ="Search"
             Color: =RGBA(116, 116, 116, 1)
             Default: =""
             Fill: =Color.Transparent

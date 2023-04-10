@@ -52,6 +52,7 @@
                 ZIndex: =2
 
             AddPicture4 As addMedia:
+                AccessibleLabel: ="Picture"
                 Height: =225
                 Text: ="Tap or click to edit image"
                 Width: =(Parent.Width - 60) * 0.6
@@ -113,6 +114,7 @@
                 ZIndex: =1
 
             DataCardValue26 As text:
+                AccessibleLabel: ="Description"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -185,6 +187,7 @@
                 ZIndex: =1
 
             DataCardValue66 As combobox:
+                AccessibleLabel: ="ShareParcelWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -258,6 +261,7 @@
                 ZIndex: =1
 
             DataCardValue1 As combobox:
+                AccessibleLabel: ="Label"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["cr967_foodbankpk"]
@@ -330,6 +334,7 @@
                 ZIndex: =1
 
             DataCardValue64 As text:
+                AccessibleLabel: ="Name"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -388,18 +393,22 @@
         ZIndex: =5
 
     "'Complete_Icon  (Edit Parcel Information)' As icon.Check":
+        AccessibleLabel: ="Tick"
         Height: =45
         Icon: =Icon.Check
         OnSelect: =If(SubmitForm(EditParcelForm), SubmitForm(EditParcelForm); Back(), 0);
+        TabIndex: =0
         Width: =45
         X: =590
         Y: =68
         ZIndex: =6
 
     "'Cancel _Icon (Edit Parcel Information)' As icon.Cancel":
+        AccessibleLabel: ="Cancel"
         Height: =45
         Icon: =Icon.Cancel
         OnSelect: =Back()
+        TabIndex: =0
         Width: =45
         X: =5
         Y: =68

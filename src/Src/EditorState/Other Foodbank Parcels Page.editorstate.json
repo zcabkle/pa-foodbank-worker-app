@@ -2196,6 +2196,14 @@
           "InvariantPropertyName": "Visible",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"\"",
+          "InvariantPropertyName": "AccessibleLabel",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "GalleryTemplateChildName": "galleryTemplate6_1",
@@ -2220,6 +2228,11 @@
         {
           "Category": "Data",
           "PropertyName": "Items",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "AccessibleLabel",
           "RuleProviderType": "Unknown"
         },
         {
@@ -2486,6 +2499,14 @@
           "InvariantPropertyName": "PaddingLeft",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"\"",
+          "InvariantPropertyName": "AccessibleLabel",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -2514,6 +2535,11 @@
         {
           "Category": "Data",
           "PropertyName": "HintText",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "AccessibleLabel",
           "RuleProviderType": "Unknown"
         },
         {

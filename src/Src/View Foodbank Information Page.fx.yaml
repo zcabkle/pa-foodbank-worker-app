@@ -65,6 +65,7 @@
                 ZIndex: =1
 
             DataCardValue79 As combobox:
+                AccessibleLabel: ="Manager"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["fullname"]

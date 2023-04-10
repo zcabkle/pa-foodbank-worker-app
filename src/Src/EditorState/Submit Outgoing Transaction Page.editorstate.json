@@ -3264,6 +3264,14 @@
           "InvariantPropertyName": "HintText",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"\"",
+          "InvariantPropertyName": "AccessibleLabel",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -3292,6 +3300,11 @@
         {
           "Category": "Data",
           "PropertyName": "HintText",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "AccessibleLabel",
           "RuleProviderType": "Unknown"
         },
         {
@@ -3711,6 +3724,22 @@
           "InvariantPropertyName": "Visible",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "-1",
+          "InvariantPropertyName": "TabIndex",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"\"",
+          "InvariantPropertyName": "AccessibleLabel",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "GalleryTemplateChildName": "galleryTemplate2_4",
@@ -3735,6 +3764,11 @@
         {
           "Category": "Data",
           "PropertyName": "WrapCount",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "AccessibleLabel",
           "RuleProviderType": "Unknown"
         },
         {
@@ -3855,6 +3889,11 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "TabIndex",
           "RuleProviderType": "Unknown"
         }
       ],
