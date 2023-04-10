@@ -794,6 +794,7 @@
             );
             
             If(SubmitForm(AddItemForm), SubmitForm(AddItemForm); Back(); ResetForm(AddItemForm), 0)
+        TabIndex: =0
         Width: =45
         X: =590
         Y: =68
@@ -804,6 +805,7 @@
         Height: =45
         Icon: =Icon.Cancel
         OnSelect: =ResetForm(AddItemForm); Back();
+        TabIndex: =0
         Width: =45
         X: =5
         Y: =68

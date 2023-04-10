@@ -15,18 +15,22 @@
         ZIndex: =3
 
     "'Complete_Icon  (Edit Parcel Information)_3' As icon.Check":
+        AccessibleLabel: ="Tick"
         Height: =45
         Icon: =Icon.Check
         OnSelect: =If(SubmitForm(Form4), SubmitForm(Form4); Back(), 0);
+        TabIndex: =0
         Width: =45
         X: =590
         Y: =68
         ZIndex: =4
 
     "'Cancel _Icon (Edit Parcel Information)_2' As icon.Cancel":
+        AccessibleLabel: ="Cancel"
         Height: =45
         Icon: =Icon.Cancel
         OnSelect: =Back()
+        TabIndex: =0
         Width: =45
         X: =5
         Y: =68
@@ -107,6 +111,7 @@
                 ZIndex: =1
 
             DataCardValue100 As text:
+                AccessibleLabel: ="Forename"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -180,6 +185,7 @@
                 ZIndex: =1
 
             DataCardValue101 As text:
+                AccessibleLabel: ="Surname"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -253,6 +259,7 @@
                 ZIndex: =1
 
             DataCardValue102 As text:
+                AccessibleLabel: ="Address"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -326,6 +333,7 @@
                 ZIndex: =1
 
             DataCardValue103 As text:
+                AccessibleLabel: ="Email"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -399,6 +407,7 @@
                 ZIndex: =1
 
             DataCardValue104 As text:
+                AccessibleLabel: ="Phone Number"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true

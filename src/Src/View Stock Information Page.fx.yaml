@@ -527,20 +527,24 @@
         ZIndex: =5
 
     "'Delete_Icon (View Stock Information)' As icon.Trash":
+        AccessibleLabel: ="Delete"
         Height: =45
         Icon: =Icon.Trash
         OnSelect: |-
             =RemoveIf(Stock, ItemPK = 'MyStock_Gallery (Home)'.Selected.ItemPK);
             Navigate('Home Page');
+        TabIndex: =0
         Width: =45
         X: =10
         Y: =68
         ZIndex: =6
 
     "'Edit_Icon (View Stock Information)' As icon.Edit":
+        AccessibleLabel: ="Edit"
         Height: =45
         Icon: =Icon.Edit
         OnSelect: =Navigate('Edit Stock Information Page')
+        TabIndex: =0
         Width: =45
         X: =583
         Y: =68

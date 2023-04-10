@@ -52,6 +52,7 @@
                 ZIndex: =2
 
             AddPicture6 As addMedia:
+                AccessibleLabel: ="Picture"
                 Height: =225
                 Width: =(Parent.Width - 60) * 0.6
                 X: =146
@@ -112,6 +113,7 @@
                 ZIndex: =1
 
             DataCardValue4 As combobox:
+                AccessibleLabel: ="ShareParcelWith"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DefaultSelectedItems: =[Parent.Default]
                 DisplayFields: =["Value"]
@@ -185,6 +187,7 @@
                 ZIndex: =1
 
             DataCardValue2 As text:
+                AccessibleLabel: ="Name"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -257,6 +260,7 @@
                 ZIndex: =1
 
             DataCardValue3 As text:
+                AccessibleLabel: ="Description"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true

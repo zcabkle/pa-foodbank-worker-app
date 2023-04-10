@@ -13,6 +13,7 @@
         ZIndex: =3
 
     "'Other_Foodbank_Stock_Gallery (Other Foodbank Stock)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Items"
         Height: =836
         Items: |-
             =Search(
@@ -30,6 +31,7 @@
                 "cr967_name"
             )
         Layout: =Layout.Vertical
+        TabIndex: =0
         TemplateFill: =
         TemplatePadding: =10
         TemplateSize: =238
@@ -62,7 +64,7 @@
 
         Label18 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Height: =48
+            Height: =53
             OnSelect: =Select(Parent)
             Size: =15
             Text: ="*StockLevel for this item is not being shared."
@@ -73,9 +75,9 @@
                         ThisItem.ShareStockLevelWith = ShareWith.'Foodbanks & Public'
                     )
                 )
-            Width: =483
-            X: =144
-            Y: =151
+            Width: =454
+            X: =166
+            Y: =166
             ZIndex: =3
 
         Label19 As label:
@@ -84,7 +86,7 @@
             Height: =133
             OnSelect: =Select(Parent)
             Size: =21
-            Text: =ThisItem.Name
+            Text: =ThisItem.ItemPK
             Width: =242
             X: =173
             Y: =13
@@ -92,7 +94,6 @@
 
         Label18_1 As label:
             Color: =RGBA(0, 18, 107, 1)
-            Height: =48
             OnSelect: =Select(Parent)
             Size: =15
             Text: ="*Quantity for this item is not being shared."
@@ -103,17 +104,19 @@
                         ThisItem.ShareQuantityWith = ShareWith.'Foodbanks & Public'
                     )
                 )
-            Width: =483
-            X: =144
-            Y: =126
+            Width: =439
+            X: =164
+            Y: =146
             ZIndex: =5
 
         Icon7_3 As icon.NextArrow:
+            AccessibleLabel: ="More Info"
             Height: =49
             Icon: =Icon.NextArrow
             OnSelect: |-
                 =Select(Parent);
                 Navigate('View Stock Information Other Foodbank Page');
+            TabIndex: =0
             Width: =49
             X: =542
             Y: =85
@@ -215,12 +218,14 @@
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
+            Tooltip: ="Search"
             Width: =529
             X: =18
             Y: =123
             ZIndex: =1
 
         "'Search (Other Foodbank Stock)' As text":
+            AccessibleLabel: ="Search"
             Clear: =true
             Color: =RGBA(0, 18, 107, 1)
             Default: =""
@@ -234,6 +239,7 @@
             RadiusTopLeft: =40
             RadiusTopRight: =40
             Size: =21
+            Tooltip: ="Search"
             Width: =514
             X: =21
             Y: =130

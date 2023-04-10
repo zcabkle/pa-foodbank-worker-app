@@ -164,10 +164,12 @@
         ZIndex: =5
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Visits"
         Fill: =RGBA(255, 255, 255, 1)
         Height: =609
         Items: =Sort(colDisplayedVisits, Date)
         Layout: =Layout.Vertical
+        TabIndex: =0
         TemplateFill: =RGBA(243, 243, 243, 0.8)
         TemplatePadding: =0
         TemplateSize: =61

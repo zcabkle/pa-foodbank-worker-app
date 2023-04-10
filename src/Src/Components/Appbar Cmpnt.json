@@ -694,7 +694,7 @@
               },
               {
                 "Category": "Design",
-                "InvariantScript": "0",
+                "InvariantScript": "1",
                 "Property": "FocusedBorderThickness",
                 "RuleProviderType": "Unknown"
               },
@@ -970,6 +970,14 @@
             "InvariantPropertyName": "AccessibleLabel",
             "IsLockable": false,
             "NameMapSourceSchema": "?"
+          },
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "-1",
+            "InvariantPropertyName": "TabIndex",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
           }
         ],
         "ControlUniqueId": "20",
@@ -1135,6 +1143,12 @@
             "Category": "Design",
             "InvariantScript": "CountRows(Self.AllItems)*Self.TemplateWidth",
             "Property": "Width",
+            "RuleProviderType": "Unknown"
+          },
+          {
+            "Category": "Design",
+            "InvariantScript": "0",
+            "Property": "TabIndex",
             "RuleProviderType": "Unknown"
           }
         ],
@@ -1520,7 +1534,7 @@
               },
               {
                 "Category": "Design",
-                "InvariantScript": "0",
+                "InvariantScript": "1",
                 "Property": "FocusedBorderThickness",
                 "RuleProviderType": "Unknown"
               },
@@ -1705,6 +1719,14 @@
             "InvariantPropertyName": "AccessibleLabel",
             "IsLockable": false,
             "NameMapSourceSchema": "?"
+          },
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "-1",
+            "InvariantPropertyName": "TabIndex",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
           }
         ],
         "ControlUniqueId": "23",
@@ -1870,6 +1892,12 @@
             "Category": "Design",
             "InvariantScript": "false",
             "Property": "ShowScrollbar",
+            "RuleProviderType": "Unknown"
+          },
+          {
+            "Category": "Design",
+            "InvariantScript": "0",
+            "Property": "TabIndex",
             "RuleProviderType": "Unknown"
           }
         ],
@@ -3534,7 +3562,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638167636590246521",
+    "LastModifiedTimestamp": "638167639572748825",
     "Name": "Appbar Cmpnt",
     "Rules": [
       {
@@ -3593,7 +3621,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638167636590246521",
+  "LastModifiedTimestamp": "638167639572748825",
   "Name": "72ca80fb63914274b26885d974d83f5c",
   "OverridableProperties": {},
   "Version": "638061935486295173"

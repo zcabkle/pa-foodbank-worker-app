@@ -2023,6 +2023,14 @@
             "InvariantPropertyName": "AccessibleLabel",
             "IsLockable": false,
             "NameMapSourceSchema": "?"
+          },
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "-1",
+            "InvariantPropertyName": "TabIndex",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
           }
         ],
         "ControlUniqueId": "9",
@@ -2185,6 +2193,12 @@
             "RuleProviderType": "Unknown"
           },
           {
+            "Category": "Design",
+            "InvariantScript": "0",
+            "Property": "TabIndex",
+            "RuleProviderType": "Unknown"
+          },
+          {
             "Category": "Behavior",
             "InvariantScript": "Navigate('Profile Page')",
             "Property": "OnSelect",
@@ -2275,6 +2289,14 @@
             "AutoRuleBindingEnabled": false,
             "AutoRuleBindingString": "\"\"",
             "InvariantPropertyName": "AccessibleLabel",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "-1",
+            "InvariantPropertyName": "TabIndex",
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           }
@@ -2436,6 +2458,12 @@
             "Category": "Design",
             "InvariantScript": "50",
             "Property": "Width",
+            "RuleProviderType": "Unknown"
+          },
+          {
+            "Category": "Design",
+            "InvariantScript": "0",
+            "Property": "TabIndex",
             "RuleProviderType": "Unknown"
           },
           {
@@ -2654,7 +2682,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638167636515035931",
+    "LastModifiedTimestamp": "638167638279370300",
     "Name": "Topbar Cmpnt",
     "Rules": [
       {
@@ -2713,7 +2741,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638167636515035931",
+  "LastModifiedTimestamp": "638167638279370300",
   "Name": "2517b711d6f44f4f89e680651078dfe9",
   "OverridableProperties": {},
   "Version": "638063077334021498"

@@ -88,6 +88,7 @@
         Height: =50
         Icon: =Icon.Bell
         OnSelect: =Navigate('Notifications Page')
+        TabIndex: =0
         Width: =50
         X: =576
         Y: =5
@@ -99,6 +100,7 @@
         Height: =50
         Icon: =Icon.Person
         OnSelect: =Navigate('Profile Page')
+        TabIndex: =0
         Width: =50
         X: =518
         Y: =5

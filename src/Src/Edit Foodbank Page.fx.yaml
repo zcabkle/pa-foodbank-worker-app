@@ -53,6 +53,7 @@
                 ZIndex: =2
 
             AddPicture8 As addMedia:
+                AccessibleLabel: ="Picture"
                 Height: =225
                 Width: =(Parent.Width - 60) * 0.6
                 X: =146
@@ -153,6 +154,7 @@
                 ZIndex: =1
 
             DataCardValue37 As text:
+                AccessibleLabel: ="Name"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -225,6 +227,7 @@
                 ZIndex: =1
 
             DataCardValue46 As text:
+                AccessibleLabel: ="Operating Hours"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -298,6 +301,7 @@
                 ZIndex: =1
 
             DataCardValue47 As text:
+                AccessibleLabel: ="Email"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -371,6 +375,7 @@
                 ZIndex: =1
 
             DataCardValue48 As text:
+                AccessibleLabel: ="Phone Number"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -444,6 +449,7 @@
                 ZIndex: =1
 
             DataCardValue49 As text:
+                AccessibleLabel: ="Address"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -517,6 +523,7 @@
                 ZIndex: =1
 
             DataCardValue50 As text:
+                AccessibleLabel: ="PostCode"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -590,6 +597,7 @@
                 ZIndex: =1
 
             DataCardValue52 As text:
+                AccessibleLabel: ="Town"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
@@ -636,9 +644,11 @@
                 ZIndex: =4
 
     "'Complete_Icon  (Edit Parcel Information)_1' As icon.Check":
+        AccessibleLabel: ="Tick"
         Height: =45
         Icon: =Icon.Check
         OnSelect: =If(SubmitForm(Form2), SubmitForm(Form2); Back(), 0);
+        TabIndex: =0
         Width: =45
         X: =590
         Y: =68

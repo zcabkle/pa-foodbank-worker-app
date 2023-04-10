@@ -1,6 +1,7 @@
 "'Select Foodbank Page' As screen":
 
     "'MyFoodbanks_Gallery (Select Foodbank)' As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        AccessibleLabel: ="Foodbanks"
         Fill: |
             =Color.White
         Height: =997
@@ -11,6 +12,7 @@
         OnSelect: |-
             =Set(SelectedFoodbank, ThisItem.cr967_foodbankpk);
             Navigate('Home Page');
+        TabIndex: =0
         TemplateFill: |
             =
         TemplatePadding: =10
@@ -39,7 +41,7 @@
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.Name
+            Text: =ThisItem.Address
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 104
             X: =27
@@ -73,11 +75,13 @@
             ZIndex: =6
 
         Icon7_5 As icon.NextArrow:
+            AccessibleLabel: ="More Info"
             Height: =49
             Icon: =Icon.NextArrow
             OnSelect: |-
                 =Set(SelectedFoodbank, ThisItem.cr967_foodbankpk);
                 Navigate('Home Page');
+            TabIndex: =0
             Width: =49
             X: =536
             Y: =64

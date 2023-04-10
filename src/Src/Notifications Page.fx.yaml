@@ -23,6 +23,7 @@
                 "cr967_message"
             )
         Layout: =Layout.Vertical
+        TabIndex: =0
         TemplateFill: =
         TemplatePadding: =10
         TemplateSize: =198
@@ -93,6 +94,7 @@
             Height: =29
             Icon: =Icon.Trash
             OnSelect: =RemoveIf(Notifications, NotificationPK = ThisItem.NotificationPK);
+            TabIndex: =0
             Width: =29
             X: =546
             Y: =109
@@ -103,6 +105,8 @@
             Height: =47
             Icon: =Icon.Information
             OnSelect: =Select(Parent); Navigate('Notification Foodbank More Information Page');
+            TabIndex: |
+                =0
             Width: =47
             X: =542
             Y: =44

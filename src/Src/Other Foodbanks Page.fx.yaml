@@ -4,9 +4,11 @@
         ZIndex: =2
 
     "'Other_Foodbanks_Gallery (Other Foodbanks)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Other Foodbanks"
         Height: =890
         Items: =Search(Filter(Foodbanks, FoodbankPK <> SelectedFoodbank), 'Search (Other Foodbanks)'.Text, "cr967_name")
         Layout: =Layout.Vertical
+        TabIndex: =0
         TemplateFill: |
             =
         TemplatePadding: =10
@@ -39,11 +41,13 @@
             ZIndex: =2
 
         Icon7_2 As icon.NextArrow:
+            AccessibleLabel: ="More Info"
             Height: =49
             Icon: =Icon.NextArrow
             OnSelect: |-
                 =Select(Parent);
                 Navigate('View Foodbank Information Page');
+            TabIndex: =0
             Width: =49
             X: =543
             Y: =78
@@ -124,6 +128,7 @@
             ZIndex: =1
 
         "'Search (Other Foodbanks)' As text":
+            AccessibleLabel: ="Search"
             Clear: =true
             Color: =RGBA(116, 116, 116, 1)
             Default: =""
